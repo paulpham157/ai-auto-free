@@ -73,14 +73,21 @@ jobs:
         with:
           path: artifacts
 
+      - name: Zip Artifacts
+        run: |
+          cd artifacts
+          zip -r windows-build.zip windows-build/
+          zip -r linux-build.zip linux-build/
+          zip -r macos-build.zip macos-build/
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ github.run_number }}
           name: Release v${{ github.run_number }}
           files: |
-            artifacts/windows-build/**
-            artifacts/linux-build/**
-            artifacts/macos-build/**
+            artifacts/windows-build.zip
+            artifacts/linux-build.zip
+            artifacts/macos-build.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
