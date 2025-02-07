@@ -20,7 +20,7 @@ jobs:
       - run: flutter pub get
       - run: flutter build windows
       - name: Archive Windows Build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: windows-build
           path: build/windows/x64/runner/Release/
@@ -40,7 +40,7 @@ jobs:
       - run: flutter pub get
       - run: flutter build linux
       - name: Archive Linux Build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: linux-build
           path: build/linux/x64/release/bundle/
@@ -57,7 +57,7 @@ jobs:
       - run: flutter pub get
       - run: flutter build macos
       - name: Archive macOS Build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: macos-build
           path: build/macos/Build/Products/Release/
@@ -69,7 +69,7 @@ jobs:
 
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
