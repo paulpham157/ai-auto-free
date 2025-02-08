@@ -73,7 +73,7 @@
     "version": "Sürüm",
     "welcome_to_ai_auto_free": "AI Auto Free'ye Hoşgeldiniz",
     "settings_are_being_configured": "Ayarlar yapılandırılıyor",
-    "you_should_restart_your_computer": "Bilgisayarınızı yeniden başlatmanız gerekecek",
+    "you_should_restart_your_computer": "Bilgisayarınızı şimdi yeniden başlatmanız gerekiyor",
     "retry": "Tekrar dene",
     "checking_python": "Python kontrol ediliyor",
     "python_not_available": "Python mevcut değil",

@@ -267,7 +267,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "windsurf": MessageLookupByLibrary.simpleMessage("Windsurf"),
     "you_should_restart_your_computer": MessageLookupByLibrary.simpleMessage(
-      "Bilgisayarınızı yeniden başlatmanız gerekecek",
+      "Bilgisayarınızı şimdi yeniden başlatmanız gerekiyor",
     ),
   };
 }

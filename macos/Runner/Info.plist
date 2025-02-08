@@ -28,5 +28,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+    <key>NSFullDiskAccessUsageDescription</key>
+    <string>Database access requires full disk access.</string>
 </dict>
 </plist>

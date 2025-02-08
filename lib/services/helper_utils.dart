@@ -118,6 +118,7 @@ class HelperUtils {
       arguments.add("--imap-user ${UserSettings.getImapUser()}");
       arguments.add('--imap-pass "${UserSettings.getImapPassword()}"');
     }
+    arguments.add("--platform ${Platform.operatingSystem}");
     return arguments;
   }
 }
