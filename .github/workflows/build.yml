@@ -55,12 +55,27 @@ jobs:
           channel: 'stable'
       - run: flutter config --enable-macos-desktop
       - run: flutter pub get
-      - run: flutter build macos
+      - name: Build macOS App
+        run: flutter build macos --release --split-debug-info=build/debug-info --obfuscate
+
+      - name: Prepare macOS App
+        run: |
+          cd build/macos/Build/Products/Release
+          # Gereksiz dosyaları kaldır
+          rm -rf ai_auto_free.app/Contents/_CodeSignature || true
+          rm -rf ai_auto_free.app/Contents/Frameworks/*/_CodeSignature || true
+          rm -rf ai_auto_free.app/Contents/Frameworks/*/Versions/Current/_CodeSignature || true
+          # Uygulama izinlerini düzelt
+          chmod -R +x ai_auto_free.app
+          # DMG oluştur
+          hdiutil create -volname "AI Auto Free" -srcfolder ai_auto_free.app -ov -format UDZO ai_auto_free.dmg
+
       - name: Archive macOS Build
         uses: actions/upload-artifact@v4
         with:
           name: macos-build
-          path: build/macos/Build/Products/Release/
+          path: build/macos/Build/Products/Release/ai_auto_free.dmg
+
 
   create-release:
     needs: [build-windows, build-linux, build-macos]
