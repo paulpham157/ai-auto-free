@@ -56,19 +56,19 @@ jobs:
       - run: flutter config --enable-macos-desktop
       - run: flutter pub get
       - name: Build macOS App
-        run: flutter build macos --release --split-debug-info=build/debug-info --obfuscate
+        run: flutter build macos --release
 
       - name: Prepare macOS App
         run: |
           cd build/macos/Build/Products/Release
-          # Gereksiz dosyaları kaldır
-          rm -rf ai_auto_free.app/Contents/_CodeSignature || true
-          rm -rf ai_auto_free.app/Contents/Frameworks/*/_CodeSignature || true
-          rm -rf ai_auto_free.app/Contents/Frameworks/*/Versions/Current/_CodeSignature || true
-          # Uygulama izinlerini düzelt
-          chmod -R +x ai_auto_free.app
+          # Uygulama paketini hazırla
+          mkdir -p dmg_root
+          cp -r ai_auto_free.app dmg_root/
           # DMG oluştur
-          hdiutil create -volname "AI Auto Free" -srcfolder ai_auto_free.app -ov -format UDZO ai_auto_free.dmg
+          hdiutil create -format UDRW -volname "AI Auto Free" -srcfolder dmg_root -ov ai_auto_free_temp.dmg
+          # DMG'yi sıkıştır
+          hdiutil convert ai_auto_free_temp.dmg -format UDZO -o ai_auto_free.dmg
+          rm ai_auto_free_temp.dmg
 
       - name: Archive macOS Build
         uses: actions/upload-artifact@v4
