@@ -1,6 +1,12 @@
 # AI Auto Free
 
-AI Auto Free is a comprehensive automation tool that enables unlimited usage of AI-powered IDEs like Cursor and Windsurf. The project offers cross-platform support and includes multiple language capabilities.
+> **NOTE:** This program currently only supports Windows operating system.
+
+# [CLICK HERE TO DOWNLOAD THE TOOL](https://github.com/kodu67/ai-auto-free/releases/latest)
+
+AI Auto Free is a comprehensive automation tool that enables unlimited usage of AI-powered IDEs like Cursor and Windsurf.
+
+This tool allows you to directly own created accounts in a cost-effective way.
 
 ## Important Notice
 This tool is developed for research and educational purposes only. Please use responsibly. The developer assumes no liability for any issues that may arise from using this tool.
