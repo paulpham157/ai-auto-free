@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.6] - 2025-03-10
+- Fixed account switching issues
+- Resolved some login problems
+- Added quick login with token for Windsurf accounts
+- Improved application security
+- Fixed credit display issues
+- And other things I forgot.. :)
+
 ## [2.0.5] - 2025-03-03
 - Added manual account adding option
 - Application fully switched to pool system

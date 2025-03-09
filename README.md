@@ -1,15 +1,23 @@
 # AI Auto Free
 
+<div align="center">
+  <a href="README.md">English</a> |
+  <a href="README.tr.md">Türkçe</a> |
+  <a href="README.md.cn">中文</a>
+</div>
+
+<br>
+
 > **NOTE:** This program currently only supports Windows operating system.
 
 # [CLICK HERE TO DOWNLOAD THE TOOL](https://github.com/kodu67/ai-auto-free/releases/latest)
 
-AI Auto Free is a comprehensive automation tool that enables unlimited usage of AI-powered IDEs like Cursor and Windsurf.
+AI Auto Free is a comprehensive automation tool that enables unlimited use of AI-powered IDEs such as Cursor and Windsurf.
 
-This tool allows you to directly own created accounts in a cost-effective way.
+This tool allows you to directly own the created accounts in a cost-effective way.
 
-## Important Notice
-This tool is developed for research and educational purposes only. Please use responsibly. The developer assumes no liability for any issues that may arise from using this tool.
+## Important Warning
+This tool has been developed for research and educational purposes only. Please use it responsibly. The developer does not accept any responsibility for any issues that may arise from the use of this tool.
 
 ## Supported Languages
 
@@ -21,22 +29,18 @@ This tool is developed for research and educational purposes only. Please use re
 
 ### Windows
 ![AI Free](screenshots/r1.png)
-
-![AI Free](screenshots/r2.png)
 ___
-### Cursor Account Creator
-It's fully automatic. You don't need to do anything.
-
+### Account Creator
+It is completely automatic. You don't need to do anything. It retrieves previously created accounts for you through the pool (server).
 ___
-### Settings
-Browser Visibility: By default, the browser is hidden while operations are being performed. If you want to see how automatic account creation processes are done, enable this option.
 
-Email Verifier: By default, the "Temporary" option is selected. If this option is selected, it will perform email verification using temp mail services. However, since the services we create accounts for block temp mail services, there is a chance of encountering problems. In this case, you can select the "IMAP" option.
+### Requirements
+- Python version 10 and above (Latest version recommended)
+- Google Chrome
 
-If the IMAP option is selected, it will perform email verification using IMAP services.
-___
 ### Common Issues
-- #### Trial Limit Exceeded
+
+- #### Trial Version Limit Exceeded
 ```text
 Too many free trial accounts used on this machine.
 Please upgrade to pro. We have this limit in place
@@ -47,21 +51,18 @@ this is a mistake.
 ```text
 You've reached your trial request limit.
 ```
-Solution: You need to enable proxy mode.
+You may receive these errors for Cursor. All you need to do is click the button in the application to remove the Cursor trial version warning.
 
 - #### Unauthorized Request
 This is an error seen on the Cursor side. It indicates that the email/email domain you are using has been blocked by Cursor services.
 
-- #### Windsurf Registration Server is Unavailable
-The Windsurf registration server may sometimes become unavailable. In this case, we have no choice but to wait for the Windsurf servers. You can try again later.
-
-- #### Windsurf Token Not Accepted
-The account creation process might not have been completed successfully. This is related to the above issue.
 ___
 ### Frequently Asked Questions
 - #### What does this tool do?
-IDEs like Cursor and Windsurf that help us code with artificial intelligence have limited usage in the free plan. You can use this tool to overcome this limit.
+AI-powered IDEs like Cursor and Windsurf that help us code have limited use in the free plan. You can use this tool to overcome this limitation.
 
-- #### If I create a new account, will my codes or conversations with AI (context) be deleted?
+After getting an account, you can switch to the account by clicking on the account you received. This way, you can use multiple accounts.
+
+- #### If I create a new account, will my code or conversations with AI (context) be deleted?
 No, they won't be deleted.
 ___
