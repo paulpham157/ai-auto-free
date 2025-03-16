@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.7] - 2025-03-11
+- Fixed login issues for new users
+- Added automatic updates for other updates
+- UI improvements
+
 ## [2.0.6] - 2025-03-10
 - Fixed account switching issues
 - Resolved some login problems
@@ -25,3 +30,5 @@
 - Fixed limit display issues
 - Improved token validation
 - Minor UI improvements
+
+## [1.0.0] -  2025-01-07
