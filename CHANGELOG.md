@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.8] - 2025-03-19
+- Adjustments made for security
+- Server address updated
+- Improvements in appearance
+
 ## [2.0.7] - 2025-03-11
 - Fixed login issues for new users
 - Added automatic updates for other updates
