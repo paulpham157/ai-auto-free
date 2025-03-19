@@ -1,9 +1,10 @@
 # Changelog
 
-## [2.0.8] - 2025-03-19
+## [2.0.8-9] - 2025-03-19
 - Adjustments made for security
 - Server address updated
 - Improvements in appearance
+- Fixed Bugs
 
 ## [2.0.7] - 2025-03-11
 - Fixed login issues for new users
