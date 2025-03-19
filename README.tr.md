@@ -3,7 +3,7 @@
 <div align="center">
   <a href="README.md">English</a> |
   <a href="README.tr.md">Türkçe</a> |
-  <a href="README.md.cn">中文</a>
+  <a href="README.cn.md">中文</a>
 </div>
 
 <br>
