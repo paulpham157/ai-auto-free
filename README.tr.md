@@ -10,7 +10,7 @@
 
 > **NOT:** Bu program şu anda sadece Windows işletim sistemini desteklemektedir.
 
-# [ARACI İNDİRMEK İÇİN BURAYA TIKLAYIN](https://github.com/kodu67/ai-auto-free/releases/latest)
+# [Son sürümü indir](https://github.com/kodu67/ai-auto-free/releases/latest)
 
 AI Auto Free, Cursor ve Windsurf gibi yapay zeka destekli IDE'lerin sınırsız kullanımını sağlayan kapsamlı bir otomasyon aracıdır.
 
@@ -28,7 +28,7 @@ Bu araç yalnızca araştırma ve eğitim amaçlı geliştirilmiştir. Lütfen s
 ## Ekran Görüntüleri
 
 ### Windows
-![AI Free](screenshots/r1.png)
+![AI Free](screenshots/tr.gif)
 ___
 ### Hesap Oluşturucu
 Tamamen otomatiktir. Hiçbir şey yapmanıza gerek yok. Daha önceden oluşturulmuş hesapları havuz (sunucu) üzerinden sizin için getirir.

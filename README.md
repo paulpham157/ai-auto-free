@@ -10,7 +10,7 @@
 
 > **NOTE:** This program currently only supports Windows operating system.
 
-# [CLICK HERE TO DOWNLOAD THE TOOL](https://github.com/kodu67/ai-auto-free/releases/latest)
+# [Download Latest](https://github.com/kodu67/ai-auto-free/releases/latest)
 
 AI Auto Free is a comprehensive automation tool that enables unlimited use of AI-powered IDEs such as Cursor and Windsurf.
 
@@ -28,7 +28,7 @@ This tool has been developed for research and educational purposes only. Please 
 ## Screenshots
 
 ### Windows
-![AI Free](screenshots/r1.png)
+![AI Free](screenshots/en.gif)
 ___
 ### Account Creator
 It is completely automatic. You don't need to do anything. It retrieves previously created accounts for you through the pool (server).
