@@ -1,4 +1,9 @@
-# Changelog 2025-03-20
+# Changelog 2025-03-22
+
+## [2.1.0] - 2025-03-22
+- Security update applied
+- Discord channel added for communication
+- Minor UI adjustments
 
 ## [2.0.8-9] - 2025-03-19
 - Adjustments made for security
