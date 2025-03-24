@@ -1,4 +1,4 @@
-# Changelog 2025-03-22
+# Changelog 2025-03-24
 
 ## [2.1.0] - 2025-03-22
 - Security update applied
