@@ -1,4 +1,11 @@
-# Changelog 2025-04-03
+# Changelog 2025-04-04
+
+## [2.1.0] - 2025-04-04
+- Added browser-based automatic login for Cursor
+- Simplified Cursor account activity check
+- Added status reporting for Cursor and Windsurf
+- Added language support for French, Portuguese, Russian, and German
+- Minor adjustments
 
 ## [2.1.0] - 2025-03-22
 - Security update applied
