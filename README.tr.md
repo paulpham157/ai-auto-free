@@ -29,6 +29,8 @@ Bu araç yalnızca araştırma ve eğitim amaçlı geliştirilmiştir. Lütfen s
 
 ### Windows
 ![AI Free](screenshots/tr.gif)
+![Res1](screenshots/r1.png)
+![Res1](screenshots/r2.png)
 ___
 ### Hesap Oluşturucu
 Tamamen otomatiktir. Hiçbir şey yapmanıza gerek yok. Daha önceden oluşturulmuş hesapları havuz (sunucu) üzerinden sizin için getirir.

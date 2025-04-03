@@ -29,6 +29,8 @@ AI Auto Free是一个综合性自动化工具，可以无限制地使用如Curso
 
 ### Windows
 ![AI Free](screenshots/zh.gif)
+![Res1](screenshots/r1.png)
+![Res1](screenshots/r2.png)
 ___
 ### 账户创建器
 完全自动化。您无需做任何事情。它通过池（服务器）为您检索先前创建的账户。

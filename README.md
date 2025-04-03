@@ -29,6 +29,8 @@ This tool has been developed for research and educational purposes only. Please 
 
 ### Windows
 ![AI Free](screenshots/en.gif)
+![Res1](screenshots/r1.png)
+![Res1](screenshots/r2.png)
 ___
 ### Account Creator
 It is completely automatic. You don't need to do anything. It retrieves previously created accounts for you through the pool (server).
