@@ -1,6 +1,15 @@
-# Changelog 2025-04-04
+# Changelog 2025-04-06
 
-## [2.1.0] - 2025-04-04
+## [2.1.3] - 2025-04-06
+- Gift code creation and redemption feature added
+- Credit update issue fixed
+- Account deletion mechanism modernized
+- Account sorting is now customizable
+- Minor issues in the status view for Cursor and Windsurf fixed
+- Daily login count indicator added
+- Adjustments made to fix some issues on startup
+
+## [2.1.1 - 2.1.2] - 2025-04-04
 - Added browser-based automatic login for Cursor
 - Simplified Cursor account activity check
 - Added status reporting for Cursor and Windsurf
