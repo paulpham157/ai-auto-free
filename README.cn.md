@@ -28,7 +28,8 @@ AI Auto Free是一个综合性自动化工具，可以无限制地使用如Curso
 ## 截图
 
 ### Windows
-![AI Free](screenshots/zh.gif)
+https://github.com/user-attachments/assets/f36417b9-09c5-418f-a461-20d8a411ba40
+
 ![Res1](screenshots/r1.png)
 ![Res1](screenshots/r2.png)
 ___

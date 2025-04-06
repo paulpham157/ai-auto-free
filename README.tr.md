@@ -28,7 +28,8 @@ Bu araç yalnızca araştırma ve eğitim amaçlı geliştirilmiştir. Lütfen s
 ## Ekran Görüntüleri
 
 ### Windows
-![AI Free](screenshots/tr.gif)
+https://github.com/user-attachments/assets/3639e682-85c1-41e1-affc-d7fcd04e3c3a
+
 ![Res1](screenshots/r1.png)
 ![Res1](screenshots/r2.png)
 ___

@@ -28,7 +28,8 @@ This tool has been developed for research and educational purposes only. Please 
 ## Screenshots
 
 ### Windows
-![AI Free](screenshots/en.gif)
+https://github.com/user-attachments/assets/f36417b9-09c5-418f-a461-20d8a411ba40
+
 ![Res1](screenshots/r1.png)
 ![Res1](screenshots/r2.png)
 ___
