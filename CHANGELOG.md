@@ -1,4 +1,4 @@
-# Changelog 2025-04-07
+# Changelog 2025-04-08
 
 ## [2.1.3] - 2025-04-06
 - Gift code creation and redemption feature added
