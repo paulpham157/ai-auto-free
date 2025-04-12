@@ -1,4 +1,11 @@
-# Changelog 2025-04-08
+# Changelog 2025-04-012
+
+## [2.1.4] - 2025-04-12
+- The activity check for Cursor accounts has been updated
+- The latest limits of the accounts are now saved and displayed in the account list
+- Account sorting has been adjusted based on type
+- A fix has been made in the Python configuration
+- Minor UI adjustments have been made
 
 ## [2.1.3] - 2025-04-06
 - Gift code creation and redemption feature added
