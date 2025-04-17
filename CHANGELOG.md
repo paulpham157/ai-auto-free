@@ -1,4 +1,4 @@
-# Changelog 2025-04-14
+# Changelog 2025-04-17
 
 ## [2.1.4] - 2025-04-12
 - The activity check for Cursor accounts has been updated

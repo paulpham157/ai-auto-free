@@ -1,4 +1,4 @@
-# AI Auto Free
+# AI Auto Free ( ![GitHub Repo stars](https://img.shields.io/github/stars/ruwiss/ai-auto-free) )
 
 <div align="center">
   <a href="README.md">English</a> |
@@ -10,7 +10,7 @@
 
 > **NOTE:** This program currently only supports Windows operating system.
 
-# [Download Latest](https://github.com/kodu67/ai-auto-free/releases/latest)
+# [Download Latest](https://github.com/ruwiss/ai-auto-free/releases/latest)
 
 AI Auto Free is a comprehensive automation tool that enables unlimited use of AI-powered IDEs such as Cursor and Windsurf.
 
@@ -21,9 +21,11 @@ This tool has been developed for research and educational purposes only. Please 
 
 ## Supported Languages
 
-| Language |  |  |
-|----------|----------|----------|
-| English  | Türkçe  | 中文 |
+| Language    |            |            |
+|-------------|------------|------------|
+| English     | Türkçe     | 中文       |
+| Deutsch     | Français   | Português  |
+| Русский     |            |            |
 
 ## Screenshots
 
@@ -43,21 +45,47 @@ ___
 
 ### Common Issues
 
-- #### Trial Version Limit Exceeded
-```text
-Too many free trial accounts used on this machine.
-Please upgrade to pro. We have this limit in place
-to prevent abuse. Please let us know if you believe
-this is a mistake.
+- #### Too many free trial accounts
+Error: Too many free trial accounts used on this machine.
+Solution: You have been detected for using multiple Cursor trial accounts on the same device. To solve this, you need to use an additional tool. For a quick solution, run the following command in your terminal:
+
+**For Windows Users:**
+```
+irm https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
 ```
 
-```text
-You've reached your trial request limit.
+**For Mac Users:**
 ```
-You may receive these errors for Cursor. All you need to do is click the button in the application to remove the Cursor trial version warning.
+curl -fsSL https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_mac_id_modifier.sh -o ./cursor_mac_id_modifier.sh && sudo bash ./cursor_mac_id_modifier.sh && rm ./cursor_mac_id_modifier.sh
+```
+
+**For Linux Users:**
+```
+curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_linux_id_modifier.sh | sudo bash
+```
+
+- #### Our servers are currently overloaded
+Error: Our servers are currently overloaded for non-pro users, and you've used your free quota.
+Solution: This error may appear when your account limit is reached. If you still have quota but see this, Cursor servers may be temporarily restricted for trial accounts. Wait a while or try logging out and back in.
 
 - #### Unauthorized Request
-This is an error seen on the Cursor side. It indicates that the email/email domain you are using has been blocked by Cursor services.
+Error: User is unauthorized.
+Solution: The account you are using is unauthorized or blocked by Cursor.
+
+- #### High Load
+Error: We're experiencing high demand for Claude 3.7 Sonnet right now.
+Solution: Cursor has temporarily restricted Claude models for trial accounts due to high demand. Please wait and try again.
+
+- #### Trial Request Limit
+Error: You've reached your trial request limit.
+Solution: Your trial account limit is reached. You can continue by obtaining a new account.
+
+- #### Your request has been blocked as our system
+Error: Your request has been blocked as our system has detected suspicious activity from your account/ip address.
+Solution: If your account has been previously banned by Cursor, your IP address may be blacklisted. Change your internet IP or use the "Warp" tool: https://one.one.one.one/
+
+- #### Connection Failed
+Error: If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.
 
 ___
 ### Frequently Asked Questions

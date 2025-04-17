@@ -1,4 +1,5 @@
-# AI Auto Free
+# AI Auto Free ( ![GitHub Repo stars](https://img.shields.io/github/stars/ruwiss/ai-auto-free) )
+
 
 <div align="center">
   <a href="README.md">English</a> |
@@ -10,7 +11,7 @@
 
 > **NOT:** Bu program şu anda sadece Windows işletim sistemini desteklemektedir.
 
-# [Son sürümü indir](https://github.com/kodu67/ai-auto-free/releases/latest)
+# [Son sürümü indir](https://github.com/ruwiss/ai-auto-free/releases/latest)
 
 AI Auto Free, Cursor ve Windsurf gibi yapay zeka destekli IDE'lerin sınırsız kullanımını sağlayan kapsamlı bir otomasyon aracıdır.
 
@@ -21,9 +22,11 @@ Bu araç yalnızca araştırma ve eğitim amaçlı geliştirilmiştir. Lütfen s
 
 ## Desteklenen Diller
 
-| Dil |  |  |
-|----------|----------|----------|
-| English  | Türkçe  | 中文 |
+| Dil        |            |            |
+|------------|------------|------------|
+| English    | Türkçe     | 中文       |
+| Deutsch    | Français   | Português  |
+| Русский    |            |            |
 
 ## Ekran Görüntüleri
 
@@ -41,23 +44,49 @@ ___
 - Python versiyon 10 ve üzeri (Son sürüm tavsiye edilir)
 - Google Chrome
 
-### Sık Karşılaşılan Sorunlar
+### Common Issues
 
-- #### Deneme Sürümü Limiti Aşıldı
-```text
-Too many free trial accounts used on this machine.
-Please upgrade to pro. We have this limit in place
-to prevent abuse. Please let us know if you believe
-this is a mistake.
+- #### Too many free trial accounts
+Hata: Too many free trial accounts used on this machine.
+Çözüm: Aynı cihazda birden fazla Cursor deneme hesabı kullandığınız için tespit edildiniz. Bu sorunu aşmak için ek bir araç kullanmanız gereklidir. Hızlı bir şekilde sorunu çözmek için aşağıdaki komutu terminalinizde çalıştırın.
+
+**Windows Kullanıcıları için:**
+```
+irm https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
 ```
 
-```text
-You've reached your trial request limit.
+**Mac Kullanıcıları için:**
 ```
-Cursor için bu hataları alabilirsiniz. Tek yapmanız gereken uygulama üzerindeki Cursor deneme sürümü uyarısı kaldırma butonuna tıklamanız.
+curl -fsSL https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_mac_id_modifier.sh -o ./cursor_mac_id_modifier.sh && sudo bash ./cursor_mac_id_modifier.sh && rm ./cursor_mac_id_modifier.sh
+```
+
+**Linux Kullanıcıları için:**
+```
+curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_linux_id_modifier.sh | sudo bash
+```
+
+- #### Our servers are currently overloaded
+Hata: Our servers are currently overloaded for non-pro users, and you've used your free quota.
+Çözüm: Hesap limitiniz dolduğunda bu hatayı görebilirsiniz. Eğer hala limitiniz varsa ama yine de bu hatayı alıyorsanız, büyük ihtimalle Cursor sunucuları deneme hesabı kullananlar için geçici olarak kısıtlanmıştır. Bu durumda bir süre bekleyin ya da hesabınızdan çıkıp tekrar giriş yapın.
 
 - #### Unauthorized Request
-Bu, Cursor tarafında görülen bir hatadır. Kullandığınız e-posta/e-posta alan adının Cursor hizmetleri tarafından engellendiğini gösterir.
+Hata: User is unauthorized.
+Çözüm: Kullandığınız hesap yetkisiz, yani Cursor tarafından engellenmiştir.
+
+- #### High Load
+Hata: We're experiencing high demand for Claude 3.7 Sonnet right now.
+Çözüm: Cursor, yoğunluktan dolayı deneme hesapları için Claude'un modellerini bir süreliğine kısıtlamıştır. Bir süre bekleyin ve tekrar deneyin.
+
+- #### Trial Request Limit
+Hata: You've reached your trial request limit.
+Çözüm: Deneme hesabınızın limitini doldurdunuz. Yeni hesap alarak devam edebilirsiniz.
+
+- #### Your request has been blocked as our system
+Hata: Your request has been blocked as our system has detected suspicious activity from your account/ip adress.
+Çözüm: Daha önce hesabınız Cursor tarafından yasaklandıysa IP adresiniz kara listeye düşmüş olabilir. İnternet IP adresinizi değiştirin veya "Warp" aracını kullanın: https://one.one.one.one/
+
+- #### Connection Failed
+Hata: If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.
 
 ___
 ### Sıkça Sorulan Sorular
