@@ -1,6 +1,6 @@
 # Changelog 2025-04-25
 
-## [2.1.5] - 2025-04-25
+## [2.1.5 - 2.1.6] - 2025-04-25
 - Improvements have been made to the login process
 - Account sorting has been adjusted
 - Notification section has been rearranged
