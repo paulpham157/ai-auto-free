@@ -1,9 +1,8 @@
-# Changelog 2025-04-25
+# Changelog 2025-05-06
 
-## [2.1.5 - 2.1.6] - 2025-04-25
-- Improvements have been made to the login process
-- Account sorting has been adjusted
-- Notification section has been rearranged
+## [2.1.5] - 2025-05-06
+- Platform change
+- Important changes
 
 ## [2.1.4] - 2025-04-12
 - The activity check for Cursor accounts has been updated

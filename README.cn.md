@@ -9,9 +9,9 @@
 
 <br>
 
-> **注意：** 该程序目前仅支持Windows操作系统。
+> **注意：** 您可以通过我们的网站获取账户。
 
-# [下载最新的](https://github.com/ruwiss/ai-auto-free/releases/latest)
+# [https://aiaccounts.online/](https://aiaccounts.online/)
 
 AI Auto Free是一个综合性自动化工具，可以无限制地使用如Cursor和Windsurf等人工智能驱动的IDE。
 
@@ -24,25 +24,14 @@ AI Auto Free是一个综合性自动化工具，可以无限制地使用如Curso
 
 | 语言        |            |            |
 |-------------|------------|------------|
-| English     | Türkçe     | 中文       |
-| Deutsch     | Français   | Português  |
-| Русский     |            |            |
+| English     | Türkçe     | Deutsch    |
+| العربية     | Français   | Português  |
+| Русский     | 中文       |            |
 
 ## 截图
 
-### Windows
-https://github.com/user-attachments/assets/f36417b9-09c5-418f-a461-20d8a411ba40
-
-![Res1](screenshots/r1.png)
-![Res1](screenshots/r2.png)
-___
-### 账户创建器
-完全自动化。您无需做任何事情。它通过池（服务器）为您检索先前创建的账户。
-___
-
-### 要求
-- Python 10及以上版本（推荐最新版本）
-- Google Chrome
+![Res1](screenshots/cn-1.png)
+![Res2](screenshots/cn-2.png)
 
 ### Common Issues
 
@@ -83,18 +72,24 @@ curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/
 
 - #### Your request has been blocked as our system
 错误：Your request has been blocked as our system has detected suspicious activity from your account/ip address.
-解决方法：如果您的账户曾被Cursor封禁，您的IP可能已被列入黑名单。请更换网络IP或使用“Warp”工具：https://one.one.one.one/
+解决方法：如果您的账户曾被Cursor封禁，您的IP可能已被列入黑名单。请更换网络IP或使用"Warp"工具：https://one.one.one.one/
 
 - #### Connection Failed
 错误：If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.
 
-___
 ### 常见问题解答
+
 - #### 这个工具做什么？
 像Cursor和Windsurf这样帮助我们编码的人工智能驱动的IDE在免费计划中有限制使用。您可以使用此工具来克服这一限制。
 
 获得账户后，您可以通过点击您收到的账户来切换到该账户。这样，您可以使用多个账户。
 
+- #### 如何使用这个工具？
+您可以通过向账户添加信用点数来开始获取账户。您获取的账户信息将显示在您的主页上。您可以通过这些账户的详细选项卡访问根据账户类型的其他功能，例如检查限制或自动打开账户。但是，某些功能可能需要浏览器扩展。
+
+获取账户后，您可以立即使用它们。
+
+随着账户限额耗尽，您可以通过获取新账户继续使用。但是，对于Cursor账户，为了避免使用前出现任何警告，最好使用主页上的Cursor试用重置按钮。最好按需获取账户，而不是一次性获取所有账户，因为有时账户可能会被提供商封禁。
+
 - #### 如果我创建一个新账户，我的代码或与AI的对话（上下文）会被删除吗？
 不会，它们不会被删除。
-___

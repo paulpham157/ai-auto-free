@@ -9,9 +9,9 @@
 
 <br>
 
-> **NOT:** Bu program şu anda sadece Windows işletim sistemini desteklemektedir.
+> **NOT:** Web sitemiz üzerinden hesap alımı yapabilirsiniz.
 
-# [Son sürümü indir](https://github.com/ruwiss/ai-auto-free/releases/latest)
+# [https://aiaccounts.online/](https://aiaccounts.online/)
 
 AI Auto Free, Cursor ve Windsurf gibi yapay zeka destekli IDE'lerin sınırsız kullanımını sağlayan kapsamlı bir otomasyon aracıdır.
 
@@ -24,25 +24,14 @@ Bu araç yalnızca araştırma ve eğitim amaçlı geliştirilmiştir. Lütfen s
 
 | Dil        |            |            |
 |------------|------------|------------|
-| English    | Türkçe     | 中文       |
-| Deutsch    | Français   | Português  |
-| Русский    |            |            |
+| English    | Türkçe     | Deutsch    |
+| العربية    | Français   | Português  |
+| Русский    | 中文       |            |
 
 ## Ekran Görüntüleri
 
-### Windows
-https://github.com/user-attachments/assets/3639e682-85c1-41e1-affc-d7fcd04e3c3a
-
-![Res1](screenshots/r1.png)
-![Res1](screenshots/r2.png)
-___
-### Hesap Oluşturucu
-Tamamen otomatiktir. Hiçbir şey yapmanıza gerek yok. Daha önceden oluşturulmuş hesapları havuz (sunucu) üzerinden sizin için getirir.
-___
-
-### Gereksinimler
-- Python versiyon 10 ve üzeri (Son sürüm tavsiye edilir)
-- Google Chrome
+![Res1](screenshots/tr-1.png)
+![Res2](screenshots/tr-2.png)
 
 ### Common Issues
 
@@ -88,13 +77,19 @@ Hata: Your request has been blocked as our system has detected suspicious activi
 - #### Connection Failed
 Hata: If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.
 
-___
 ### Sıkça Sorulan Sorular
-- #### Bu araç ne yapar?
-Cursor ve Windsurf gibi yapay zeka ile kod yazmamıza yardımcı olan IDE'ler ücretsiz planda sınırlı kullanıma sahiptir. Bu sınırı aşmak için bu aracı kullanabilirsiniz.
 
-Hesap aldıktan sonra, aldığınız hesabın üzerine tıklayarak hesaba geçiş yapabilirsiniz. Böylece birden fazla hesap kullanımı sağlayabilirsiniz.
+- #### Bu araç ne işe yarar?
+Cursor ve Windsurf gibi kod yazmamıza yardımcı olan AI destekli IDE'ler ücretsiz planda sınırlı kullanıma sahiptir. Bu sınırlamanın üstesinden gelmek için bu aracı kullanabilirsiniz.
+
+Bir hesap aldıktan sonra, aldığınız hesaba tıklayarak hesap değiştirebilirsiniz. Bu şekilde birden fazla hesap kullanabilirsiniz.
+
+- #### Bu araç nasıl kullanılır?
+Hesabınıza kredi ekleyerek hesap edinmeye başlayabilirsiniz. Aldığınız hesapların bilgileri ana sayfanızda yer alacaktır. Bu hesapların detay sekmesinden hesap türüne göre diğer özelliklere erişebilirsiniz. Limit sorgulama veya hesabı otomatik açma gibi. Ancak bazı özellikler tarayıcı eklentisi gerektirebilir.
+
+Hesapları aldıktan sonra hemen kullanabilirsiniz.
+
+Hesap limitiniz bittikçe yeni hesap alarak kullanmaya devam edebilirsiniz. Ancak Cursor hesapları için farklı bir durum olarak kullanmadan önce herhangi bir uyarı ile karşılaşmamak için ana sayfada bulunan Cursor Deneme Sıfırlama butonunu kullanmanız iyi olacaktır. Hesapları birden almak yerine ihtiyaç halinde almanız sizin için daha iyi olacaktır. Çünkü bazen hesaplar sağlayıcılar tarafından yasaklanabilmektedir.
 
 - #### Yeni bir hesap oluşturursam, kodlarım veya yapay zeka ile yaptığım konuşmalar (bağlam) silinir mi?
 Hayır, silinmezler.
-___
