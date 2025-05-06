@@ -199,6 +199,3 @@ fi
 echo "Starting Cursor Patch..."
 patch_cursor "$1"
 echo "Process completed!"
-
-# To use this script with curl:
-# MacOS/Linux: curl -fsSL https://raw.githubusercontent.com/yourusername/cursor-patch/main/utils/patch_cursor.sh | bash

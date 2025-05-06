@@ -93,3 +93,59 @@ Hesap limitiniz bittikçe yeni hesap alarak kullanmaya devam edebilirsiniz. Anca
 
 - #### Yeni bir hesap oluşturursam, kodlarım veya yapay zeka ile yaptığım konuşmalar (bağlam) silinir mi?
 Hayır, silinmezler.
+
+# Cursor Patch
+
+MacOS, Linux ve Windows için Cursor uygulamasını yama yapan basit bir araç.
+
+## Kullanım
+
+### Windows
+
+PowerShell'de çalıştırın:
+
+```powershell
+irm https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.ps1 | iex
+```
+
+Eğer yürütme politikası kısıtlamalarınız varsa, şunu çalıştırabilirsiniz:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; irm https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.ps1 | iex
+```
+
+### MacOS ve Linux
+
+Terminal'de çalıştırın:
+
+```bash
+chmod +x ./utils/patch_cursor.sh
+./utils/patch_cursor.sh
+```
+
+Veya doğrudan curl ile:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.sh | bash
+```
+
+## Ne İşe Yarar
+
+Bu yama, Cursor'un cihaz tanımlama mekanizmasını şu şekilde değiştirir:
+
+1. Makine kimliği için rastgele bir UUID oluşturur
+2. Rastgele bir MAC adresi ayarlar
+3. Windows kayıt defteri kontrollerini atlar
+4. Rastgele bir cihaz kimliği oluşturur
+
+Herhangi bir değişiklik yapılmadan önce tüm orijinal dosyalar `.bak` uzantısıyla yedeklenir.
+
+## Notlar
+
+- Yamayı çalıştırmadan önce Cursor'un kapalı olduğundan emin olun
+- Bu betikleri çalıştırmak için yükseltilmiş ayrıcalıklara ihtiyacınız olabilir
+- Geri yüklemeniz gerekirse orijinal yedek dosyaları korunur
+
+## Lisans
+
+MIT

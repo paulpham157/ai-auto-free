@@ -93,3 +93,59 @@ curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/
 
 - #### 如果我创建一个新账户，我的代码或与AI的对话（上下文）会被删除吗？
 不会，它们不会被删除。
+
+# Cursor Patch
+
+适用于MacOS、Linux和Windows的Cursor应用程序的简单补丁工具。
+
+## 使用方法
+
+### Windows
+
+在PowerShell中运行：
+
+```powershell
+irm https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.ps1 | iex
+```
+
+如果有执行策略限制，您可以运行：
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; irm https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.ps1 | iex
+```
+
+### MacOS和Linux
+
+在终端中运行：
+
+```bash
+chmod +x ./utils/patch_cursor.sh
+./utils/patch_cursor.sh
+```
+
+或直接使用curl：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.sh | bash
+```
+
+## 功能
+
+此补丁通过以下方式修改Cursor的设备识别机制：
+
+1. 为机器ID生成随机UUID
+2. 设置随机MAC地址
+3. 绕过Windows注册表检查
+4. 创建随机设备ID
+
+在进行任何修改之前，所有原始文件都会备份并带有`.bak`扩展名。
+
+## 注意事项
+
+- 在运行补丁之前，请确保Cursor已关闭
+- 您可能需要使用提升的权限运行这些脚本
+- 如果需要恢复，将保留原始备份文件
+
+## 许可证
+
+MIT

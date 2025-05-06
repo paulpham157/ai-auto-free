@@ -104,13 +104,13 @@ A simple utility to patch Cursor application for MacOS, Linux, and Windows.
 Run in PowerShell:
 
 ```powershell
-.\utils\patch_cursor.ps1
+irm https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.ps1 | iex
 ```
 
 If you have execution policy restrictions, you can run:
 
 ```powershell
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; .\utils\patch_cursor.ps1
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; irm https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.ps1 | iex
 ```
 
 ### MacOS and Linux
@@ -125,7 +125,7 @@ chmod +x ./utils/patch_cursor.sh
 Or directly with curl:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/cursor-patch/main/utils/patch_cursor.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ruwiss/ai-auto-free/refs/heads/master/utils/patch_cursor.sh | bash
 ```
 
 ## What it does
