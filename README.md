@@ -92,3 +92,59 @@ As your account limit is exhausted, you can continue using by acquiring new acco
 
 - #### If I create a new account, will my code or conversations with AI (context) be deleted?
 No, they won't be deleted.
+
+# Cursor Patch
+
+A simple utility to patch Cursor application for MacOS, Linux, and Windows.
+
+## Usage
+
+### Windows
+
+Run in PowerShell:
+
+```powershell
+.\utils\patch_cursor.ps1
+```
+
+If you have execution policy restrictions, you can run:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; .\utils\patch_cursor.ps1
+```
+
+### MacOS and Linux
+
+Run in Terminal:
+
+```bash
+chmod +x ./utils/patch_cursor.sh
+./utils/patch_cursor.sh
+```
+
+Or directly with curl:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yourusername/cursor-patch/main/utils/patch_cursor.sh | bash
+```
+
+## What it does
+
+This patch modifies Cursor's device identification mechanism by:
+
+1. Generating a random UUID for the machine ID
+2. Setting a random MAC address
+3. Bypassing the Windows registry checks
+4. Creating a random device ID
+
+All original files are backed up with a `.bak` extension before any modifications.
+
+## Notes
+
+- Make sure Cursor is closed before running the patch
+- You might need to run these scripts with elevated privileges
+- Original backup files are preserved in case you need to restore
+
+## License
+
+MIT
