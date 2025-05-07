@@ -1,5 +1,6 @@
 # AI Auto Free ( ![GitHub Repo stars](https://img.shields.io/github/stars/ruwiss/ai-auto-free) )
 
+> **ÖNEMLİ:** Bu servis artık aktif değil ve bakımı yapılmamaktadır.
 
 <div align="center">
   <a href="README.md">English</a> |
@@ -8,10 +9,6 @@
 </div>
 
 <br>
-
-> **NOT:** Web sitemiz üzerinden hesap alımı yapabilirsiniz.
-
-# [https://aiaccounts.online/](https://aiaccounts.online/)
 
 AI Auto Free, Cursor ve Windsurf gibi yapay zeka destekli IDE'lerin sınırsız kullanımını sağlayan kapsamlı bir otomasyon aracıdır.
 

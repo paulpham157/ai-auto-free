@@ -1,5 +1,7 @@
 # AI Auto Free ( ![GitHub Repo stars](https://img.shields.io/github/stars/ruwiss/ai-auto-free) )
 
+> **IMPORTANT:** This service is no longer active or maintained.
+
 <div align="center">
   <a href="README.md">English</a> |
   <a href="README.tr.md">Türkçe</a> |
@@ -7,10 +9,6 @@
 </div>
 
 <br>
-
-> **NOTE:** You can get accounts through our website.
-
-# [https://aiaccounts.online/](https://aiaccounts.online/)
 
 AI Auto Free is a comprehensive automation tool that enables unlimited use of AI-powered IDEs such as Cursor and Windsurf.
 

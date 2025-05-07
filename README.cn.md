@@ -1,5 +1,6 @@
 # AI Auto Free ( ![GitHub Repo stars](https://img.shields.io/github/stars/ruwiss/ai-auto-free) )
 
+> **重要提示：** 此服务不再活跃或维护。
 
 <div align="center">
   <a href="README.md">English</a> |
@@ -8,10 +9,6 @@
 </div>
 
 <br>
-
-> **注意：** 您可以通过我们的网站获取账户。
-
-# [https://aiaccounts.online/](https://aiaccounts.online/)
 
 AI Auto Free是一个综合性自动化工具，可以无限制地使用如Cursor和Windsurf等人工智能驱动的IDE。
 
