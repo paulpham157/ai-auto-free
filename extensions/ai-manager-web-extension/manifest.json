@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "AI Manager Extension",
+    "version": "1.0.0",
+    "description": "AI Manager için Chrome eklentisi",
+    "icons": {
+        "48": "assets/logo.png",
+        "128": "assets/logo.png"
+    },
+    "background": {
+        "service_worker": "src/background/background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://aiaccounts.online/*",
+                "http://aiaccounts.online/*",
+                "https://www.aiaccounts.online/*",
+                "http://www.aiaccounts.online/*"
+            ],
+            "js": [
+                "src/content/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "cookies",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://www.cursor.com/*",
+        "https://windsurf.com/*",
+        "https://aiaccounts.online/*",
+        "http://aiaccounts.online/*",
+        "*://*.aiaccounts.online/*"
+    ]
+}
