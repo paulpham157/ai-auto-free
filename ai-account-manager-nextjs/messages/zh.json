@@ -1,0 +1,257 @@
+{
+    "login": {
+        "title": "欢迎回来",
+        "subtitle": "访问您的AI工具包并管理您的资源",
+        "signInWithGoogle": "使用Google登录",
+        "memberBenefits": "会员权益",
+        "benefits": {
+            "cost": "具有高级功能的经济实惠的AI账户",
+            "analytics": "实时使用分析和监控",
+            "tools": "高级AI工具集成和管理"
+        },
+        "termsText": "登录即表示您同意我们的",
+        "termsLink": "服务条款",
+        "features": {
+            "budget": {
+                "title": "经济实惠的访问",
+                "description": "以低价获取高级AI功能"
+            },
+            "dashboard": {
+                "title": "统一仪表板",
+                "description": "从一个地方监控所有账户"
+            },
+            "switching": {
+                "title": "一键切换",
+                "description": "在AI账户之间无缝切换"
+            }
+        },
+        "branding": {
+            "title": "AI账户管理器",
+            "slogan": "解锁经济实惠的高级AI功能。一个全面的平台，帮助您高效管理AI资源。",
+            "copyright": "© 2025 AI账户管理器。保留所有权利。"
+        }
+    },
+    "home": {
+        "serviceNotice": {
+            "title": "重要服务更新",
+            "message": "我们的AI服务即将不可用。由于Cursor和Windsurf平台实施了增强的安全措施，账户创建和试用重置操作现在存在问题。此系统的购买已被停止，我们感谢所有使用过它的人。学生可以通过https://cursor.com/students获得1年免费PRO会员资格。"
+        },
+        "creditCard": {
+            "title": "信用余额",
+            "available": "可用积分",
+            "activeSubscription": "活跃订阅",
+            "addCredits": "添加积分",
+            "useGiftCode": "使用礼品码",
+            "addCreditsDialog": {
+                "title": "添加积分",
+                "description": "为您的账户购买额外积分"
+            },
+            "giftCodeDialog": {
+                "title": "使用礼品码",
+                "description": "输入您的礼品码以获取积分",
+                "success": "礼品码使用成功",
+                "error": "无效的礼品码"
+            }
+        },
+        "actions": {
+            "purchaseAccount": "购买账户",
+            "resetCursorTrial": "重置Cursor试用",
+            "purchaseDialog": {
+                "title": "购买账户",
+                "description": "选择要购买的账户类型",
+                "confirm": "确认购买",
+                "success": "账户购买成功",
+                "error": "购买过程中出错"
+            },
+            "resetDialog": {
+                "title": "重置Cursor试用",
+                "description": "按照以下步骤重置Cursor试用",
+                "success": "说明已复制到剪贴板",
+                "note": "在运行这些命令前请关闭Cursor"
+            }
+        },
+        "accounts": {
+            "title": "AI账户",
+            "subtitle": "管理您的AI服务账户",
+            "loading": "正在加载账户...",
+            "noAccounts": {
+                "title": "未找到账户",
+                "message": "从购买AI账户开始"
+            },
+            "tableHeaders": {
+                "account": "账户",
+                "email": "电子邮件",
+                "created": "创建时间",
+                "actions": "操作"
+            },
+            "viewDetails": "查看详情",
+            "pagination": {
+                "showing": "显示",
+                "to": "-",
+                "of": "/",
+                "accounts": "账户",
+                "previous": "上一页",
+                "next": "下一页"
+            }
+        },
+        "accountDetails": {
+            "title": "账户详情",
+            "type": "类型",
+            "createdOn": "创建日期",
+            "email": "电子邮箱",
+            "password": "密码",
+            "remainingLimit": "剩余限额",
+            "deleteAccount": "删除账户",
+            "deleting": "正在删除...",
+            "close": "关闭",
+            "openInBrowser": "在浏览器中打开",
+            "copyCredentials": "复制凭据",
+            "extensionDialog": {
+                "title": "需要浏览器扩展",
+                "description": "安装我们的Chrome扩展程序，实现自动登录并实时监控账户限制。",
+                "newVersion": "新版本可用",
+                "installTitle": "安装步骤",
+                "steps": {
+                    "step1": "下载扩展文件",
+                    "step2": "前往 chrome://extensions/",
+                    "step3": "启用开发者模式",
+                    "step4": "点击'加载已解压的扩展程序'",
+                    "step5": "选择解压后的文件夹"
+                },
+                "downloadExtension": "下载扩展",
+                "viewSourceCode": "查看源代码",
+                "advantages": {
+                    "title": "优势",
+                    "autoLogin": "自动登录您的账户",
+                    "liveMonitoring": "实时监控Cursor账户限制"
+                },
+                "close": "关闭"
+            }
+        },
+        "resetCursorTrial": {
+            "title": "Cursor试用重置说明",
+            "description": "选择以下操作系统并运行命令来重置Cursor试用。",
+            "linuxMacos": "Linux/macOS",
+            "archlinux": "Archlinux",
+            "windows": "Windows",
+            "copyToClipboard": "复制到剪贴板",
+            "installVia": "通过以下方式安装",
+            "note": "注意：首先关闭Cursor。然后在终端中以管理员权限运行这些命令。对于Windows用户，请确保以管理员身份运行PowerShell。脚本来自项目：",
+            "project": "ai-auto-free",
+            "close": "关闭"
+        },
+        "creditPacks": {
+            "title": "添加积分",
+            "description": "选择要添加到您账户的积分包。每个积分的费用是",
+            "credits": "积分",
+            "price": "价格",
+            "perCredit": "每积分",
+            "howCreditsWork": {
+                "title": "积分如何工作？",
+                "description": "积分用于购买账户或其他功能。它们是一次性付款，不会自动续费。"
+            },
+            "useChat": "要购买积分，请通过聊天支持或Telegram联系我们",
+            "contactUs": "联系我们",
+            "close": "关闭",
+            "cancel": "取消",
+            "continuePayment": "继续付款",
+            "processing": "处理中...",
+            "payment": "付款",
+            "paymentSuccess": "付款成功！",
+            "paymentSuccessDesc": "积分已成功添加到您的账户。",
+            "redirecting": "正在重定向..."
+        },
+        "giftCode": {
+            "title": "使用礼品码",
+            "description": "输入以下礼品码以获取积分。礼品码格式为XXXX-XXXX。",
+            "label": "礼品码",
+            "placeholder": "ABCD-1234",
+            "example": "示例：ABCD-1234",
+            "howGiftCodesWork": {
+                "title": "礼品码如何工作",
+                "description": "您可以使用礼品码向账户添加积分。每个码只能使用一次。"
+            },
+            "redeemCode": "兑换码",
+            "redeeming": "正在兑换...",
+            "cancel": "取消"
+        },
+        "purchaseAccount": {
+            "title": "可用账户",
+            "subtitle": "选择要购买的账户",
+            "processing": "处理购买...",
+            "accountType": "账户",
+            "noAccountTypes": "未找到可用账户类型",
+            "credit": "积分",
+            "available": "可用",
+            "outOfStock": "缺货",
+            "close": "关闭"
+        },
+        "userMenu": {
+            "yourAccount": "您的账户",
+            "adminPanel": "管理员面板",
+            "faqHelp": "常见问题和帮助",
+            "lightMode": "明亮模式",
+            "darkMode": "暗黑模式",
+            "signOut": "退出"
+        },
+        "copied": "已复制！",
+        "copyToken": "复制令牌",
+        "faq": {
+            "title": "常见问题",
+            "commonIssues": "常见问题",
+            "issues": {
+                "tooManyAccounts": {
+                    "title": "Too many free trial accounts",
+                    "error": "错误：Too many free trial accounts used on this machine.",
+                    "solution": "解决方案：检测到您在同一设备上使用了多个Cursor试用账户。要解决此问题，请使用主页上的\"重置Cursor试用\"按钮。这将自动重置您的机器ID，并让您继续使用Cursor，而无需使用终端命令。"
+                },
+                "serversOverloaded": {
+                    "title": "Our servers are currently overloaded",
+                    "error": "错误：Our servers are currently overloaded for non-pro users, and you've used your free quota.",
+                    "solution": "解决方案：当您达到账户限制时可能会显示此错误。如果您仍有配额但看到此消息，Cursor服务器可能暂时限制了试用账户。请稍等片刻或尝试注销并重新登录。"
+                },
+                "unauthorized": {
+                    "title": "Unauthorized Request",
+                    "error": "错误：User is unauthorized.",
+                    "solution": "解决方案：您使用的账户未经授权或已被Cursor封锁。"
+                },
+                "highLoad": {
+                    "title": "High Load",
+                    "error": "错误：We're experiencing high demand for Claude 3.7 Sonnet right now.",
+                    "solution": "解决方案：由于需求高，Cursor暂时限制了试用账户的Claude模型访问。请稍后再试。"
+                },
+                "trialLimit": {
+                    "title": "Trial Request Limit",
+                    "error": "错误：You've reached your trial request limit.",
+                    "solution": "解决方案：您已达到试用账户限制。您可以通过获取新账户继续。"
+                },
+                "blocked": {
+                    "title": "Your request has been blocked as our system",
+                    "error": "错误：Your request has been blocked as our system has detected suspicious activity from your account/ip address.",
+                    "solution": "解决方案：如果您的账户之前被Cursor封禁，您的IP地址可能已被列入黑名单。更改您的互联网IP或使用\"Warp\"工具：https://one.one.one.one/"
+                },
+                "connectionFailed": {
+                    "title": "Connection Failed",
+                    "error": "错误：If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.",
+                    "solution": "解决方案：检查您的互联网连接，并确保您没有使用可能被封锁的VPN。"
+                }
+            },
+            "questions": {
+                "title": "常见问题",
+                "whatThisToolDoes": {
+                    "question": "这个工具是做什么的？",
+                    "answer": "像Cursor和Windsurf这样的AI辅助IDE在免费计划中有使用限制。您可以使用此工具克服这些限制。\n\n购买账户后，您可以点击购买的账户切换账户。这样，您可以使用多个账户。"
+                },
+                "howToUse": {
+                    "question": "如何使用这个工具？",
+                    "answer": "您可以通过向账户添加积分来开始获取账户。您购买的账户信息将显示在主页上。您可以从这些账户的详细信息选项卡访问特定于每种账户类型的其他功能，如检查限额或自动打开账户。但是，某些功能可能需要浏览器扩展。\n\n购买后，您可以立即使用账户。\n\n随着账户限额的用尽，您可以通过购买新账户继续使用。但是，特别是对于Cursor账户，建议在使用前使用主页上的Cursor试用重置按钮，以避免遇到任何警告。最好根据需要购买账户，而不是一次性全部购买，因为有时账户可能会被提供商禁止。"
+                },
+                "codeDeleted": {
+                    "question": "如果我创建新账户，我的代码或与AI的对话（上下文）会被删除吗？",
+                    "answer": "不会，它们不会被删除。"
+                }
+            },
+            "close": "关闭"
+        }
+    }
+}

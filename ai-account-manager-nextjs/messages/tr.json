@@ -1,0 +1,258 @@
+{
+    "login": {
+        "title": "Tekrar Hoşgeldiniz",
+        "subtitle": "AI araç setinize erişin ve kaynaklarınızı yönetin",
+        "signInWithGoogle": "Google ile Giriş Yap",
+        "memberBenefits": "Üyelik Avantajları",
+        "benefits": {
+            "cost": "Premium özelliklere sahip uygun fiyatlı AI hesapları",
+            "analytics": "Gerçek zamanlı kullanım analitiği ve izleme",
+            "tools": "Gelişmiş AI araçları entegrasyonu ve yönetimi"
+        },
+        "termsText": "Giriş yaparak kabul etmiş olursunuz",
+        "termsLink": "Kullanım Koşulları",
+        "features": {
+            "budget": {
+                "title": "Bütçe Dostu Erişim",
+                "description": "Premium yapay zeka özellikleri uygun fiyata"
+            },
+            "dashboard": {
+                "title": "Birleşik Gösterge Paneli",
+                "description": "Tüm hesaplarınızı tek bir yerden izleyin"
+            },
+            "switching": {
+                "title": "Tek Tıkla Geçiş",
+                "description": "AI hesapları arasında sorunsuzca geçiş yapın"
+            }
+        },
+        "branding": {
+            "title": "AI Hesap Yöneticisi",
+            "slogan": "Uygun fiyata premium yapay zeka özelliklerinin kilidini açın. Yapay zeka kaynaklarınızı verimli bir şekilde yönetmeniz için hepsi bir arada platform.",
+            "copyright": "© 2025 AI Hesap Yöneticisi. Tüm hakları saklıdır."
+        }
+    },
+    "home": {
+        "serviceNotice": {
+            "title": "Önemli Servis Güncellemesi",
+            "message": "AI Servislerimiz yakında kullanılabilir olmayacaktır. Cursor ve Windsurf platformlarının üstün güvenlik önlemleri alması nedeniyle hesap oluşturma / deneme sıfırlama gibi işlemler artık problem oluşturmaktadır. Bu sistem için satın alımlar artık durdurulmuş olup kullanan herkese teşekkür ederiz. Öğrenci kardeşlerimiz https://cursor.com/students linki üzerinden 1 yıllık ücretsiz PRO üyeliğine sahip olabilirler."
+        },
+        "creditCard": {
+            "title": "Kredi Bakiyesi",
+            "available": "Kullanılabilir krediler",
+            "activeSubscription": "Aktif abonelik",
+            "accountBanned": "Hesap banlı",
+            "addCredits": "Kredi Ekle",
+            "useGiftCode": "Hediye Kodu Kullan",
+            "addCreditsDialog": {
+                "title": "Kredi Ekle",
+                "description": "Hesabınıza ek krediler satın alın"
+            },
+            "giftCodeDialog": {
+                "title": "Hediye Kodu Kullan",
+                "description": "Kredi almak için hediye kodunuzu girin",
+                "success": "Hediye kodu başarıyla kullanıldı",
+                "error": "Geçersiz hediye kodu"
+            }
+        },
+        "actions": {
+            "purchaseAccount": "Hesap Satın Al",
+            "resetCursorTrial": "Cursor Deneme Sıfırla",
+            "purchaseDialog": {
+                "title": "Hesap Satın Al",
+                "description": "Satın almak için bir hesap türü seçin",
+                "confirm": "Satın Almayı Onayla",
+                "success": "Hesap başarıyla satın alındı",
+                "error": "Satın alma işlemi sırasında hata oluştu"
+            },
+            "resetDialog": {
+                "title": "Cursor Deneme Sıfırla",
+                "description": "Cursor deneme sürümünü sıfırlamak için bu adımları izleyin",
+                "success": "Talimatlar panoya kopyalandı",
+                "note": "Bu komutları çalıştırmadan önce Cursor'u kapatın"
+            }
+        },
+        "accounts": {
+            "title": "AI Hesapları",
+            "subtitle": "AI servis hesaplarınızı yönetin",
+            "loading": "Hesaplar yükleniyor...",
+            "noAccounts": {
+                "title": "Hesap bulunamadı",
+                "message": "Bir AI hesabı satın alarak başlayın"
+            },
+            "tableHeaders": {
+                "account": "Hesap",
+                "email": "E-posta",
+                "created": "Oluşturma",
+                "actions": "İşlemler"
+            },
+            "viewDetails": "Detay Göster",
+            "pagination": {
+                "showing": "Gösteriliyor",
+                "to": "-",
+                "of": "/",
+                "accounts": "hesap",
+                "previous": "Önceki",
+                "next": "Sonraki"
+            }
+        },
+        "accountDetails": {
+            "title": "Hesap Detayları",
+            "type": "Tür",
+            "createdOn": "Oluşturulma Tarihi",
+            "email": "E-posta",
+            "password": "Şifre",
+            "remainingLimit": "Kalan Limit",
+            "deleteAccount": "Hesabı Sil",
+            "deleting": "Siliniyor...",
+            "close": "Kapat",
+            "openInBrowser": "Tarayıcıda Aç",
+            "copyCredentials": "Bilgileri Kopyala",
+            "extensionDialog": {
+                "title": "Tarayıcı Eklentisi Gerekli",
+                "description": "Otomatik giriş yapmak ve hesap limitlerini gerçek zamanlı izlemek için Chrome eklentimizi yükleyin.",
+                "newVersion": "Yeni sürüm mevcut",
+                "installTitle": "Kurulum Adımları",
+                "steps": {
+                    "step1": "Eklenti dosyalarını indirin",
+                    "step2": "chrome://extensions/ adresine gidin",
+                    "step3": "Geliştirici Modunu etkinleştirin",
+                    "step4": "'Paketlenmemiş öğe yükle' düğmesine tıklayın",
+                    "step5": "Çıkartılan klasörü seçin"
+                },
+                "downloadExtension": "Eklentiyi İndir",
+                "viewSourceCode": "Kaynak Kodunu Görüntüle",
+                "advantages": {
+                    "title": "Avantajlar",
+                    "autoLogin": "Hesaplarınıza otomatik giriş",
+                    "liveMonitoring": "Cursor hesap limitlerini canlı izleme"
+                },
+                "close": "Kapat"
+            }
+        },
+        "resetCursorTrial": {
+            "title": "Cursor Deneme Sürümü Sıfırlama Talimatları",
+            "description": "Cursor deneme sürümünü sıfırlamak için aşağıdaki işletim sistemini seçin ve komutu çalıştırın.",
+            "linuxMacos": "Linux/macOS",
+            "archlinux": "Archlinux",
+            "windows": "Windows",
+            "copyToClipboard": "Panoya kopyala",
+            "installVia": "Şununla yükleyin",
+            "note": "Not: Öncelikle Cursor'u kapatın. Ardından bu komutları yönetici ayrıcalıklarıyla terminalinizde çalıştırın. Windows kullanıcıları için, PowerShell'i Yönetici olarak çalıştırdığınızdan emin olun. Komut dosyası şu projeden alınmıştır:",
+            "project": "ai-auto-free",
+            "close": "Kapat"
+        },
+        "creditPacks": {
+            "title": "Kredi Ekle",
+            "description": "Hesabınıza eklemek için kredi paketi seçin. Her kredinin maliyeti",
+            "credits": "Kredi",
+            "price": "Fiyat",
+            "perCredit": "her kredi için",
+            "howCreditsWork": {
+                "title": "Krediler nasıl çalışır?",
+                "description": "Krediler, hesap satın almak veya diğer özellikler için kullanılır. Tek seferlik ödemelerdir ve otomatik olarak yenilenmezler."
+            },
+            "useChat": "Kredi satın almak için lütfen sohbet desteği veya Telegram üzerinden bizimle iletişime geçin",
+            "contactUs": "Bize ulaşın",
+            "close": "Kapat",
+            "cancel": "İptal",
+            "continuePayment": "Ödemeye Devam Et",
+            "processing": "İşleniyor...",
+            "payment": "Ödeme",
+            "paymentSuccess": "Ödeme Başarılı!",
+            "paymentSuccessDesc": "Kredi hesabınıza başarıyla eklendi.",
+            "redirecting": "Yönlendiriliyor..."
+        },
+        "giftCode": {
+            "title": "Hediye Kodu Kullan",
+            "description": "Kredi almak için aşağıya hediye kodunu girin. Hediye kodları XXXX-XXXX formatındadır.",
+            "label": "Hediye Kodu",
+            "placeholder": "ABCD-1234",
+            "example": "Örnek: ABCD-1234",
+            "howGiftCodesWork": {
+                "title": "Hediye kodları nasıl çalışır",
+                "description": "Hesabınıza kredi eklemek için hediye kodlarını kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
+            },
+            "redeemCode": "Kodu Kullan",
+            "redeeming": "Kullanılıyor...",
+            "cancel": "İptal"
+        },
+        "purchaseAccount": {
+            "title": "Mevcut Hesaplar",
+            "subtitle": "Satın almak için bir hesap seçin",
+            "processing": "Satın alma işlemi yapılıyor...",
+            "accountType": "Hesap",
+            "noAccountTypes": "Mevcut hesap türü bulunamadı",
+            "credit": "Kredi",
+            "available": "mevcut",
+            "outOfStock": "Stokta yok",
+            "close": "Kapat"
+        },
+        "userMenu": {
+            "yourAccount": "Hesabınız",
+            "adminPanel": "Yönetici Paneli",
+            "faqHelp": "SSS ve Yardım",
+            "lightMode": "Aydınlık Mod",
+            "darkMode": "Karanlık Mod",
+            "signOut": "Çıkış Yap"
+        },
+        "copied": "Kopyalandı!",
+        "copyToken": "Token Kopyala",
+        "faq": {
+            "title": "Sık Sorulan Sorular",
+            "commonIssues": "Yaygın Sorunlar",
+            "issues": {
+                "tooManyAccounts": {
+                    "title": "Too many free trial accounts",
+                    "error": "Hata: Too many free trial accounts used on this machine.",
+                    "solution": "Çözüm: Aynı cihazda birden fazla Cursor deneme hesabı kullandığınız tespit edildi. Bunu çözmek için ana sayfadaki \"Cursor Deneme Sürümünü Sıfırla\" düğmesini kullanın. Bu, makine kimliğinizi otomatik olarak sıfırlayacak ve terminal komutları kullanmadan Cursor'u kullanmaya devam etmenizi sağlayacaktır."
+                },
+                "serversOverloaded": {
+                    "title": "Our servers are currently overloaded",
+                    "error": "Hata: Our servers are currently overloaded for non-pro users, and you've used your free quota.",
+                    "solution": "Çözüm: Bu hata, hesap limitinize ulaştığınızda görünebilir. Hala kotanız varsa ancak bunu görüyorsanız, Cursor sunucuları deneme hesapları için geçici olarak kısıtlanmış olabilir. Bir süre bekleyin veya oturumu kapatıp tekrar açmayı deneyin."
+                },
+                "unauthorized": {
+                    "title": "Unauthorized Request",
+                    "error": "Hata: User is unauthorized.",
+                    "solution": "Çözüm: Kullandığınız hesap yetkisiz veya Cursor tarafından engellenmiş."
+                },
+                "highLoad": {
+                    "title": "High Load",
+                    "error": "Hata: We're experiencing high demand for Claude 3.7 Sonnet right now.",
+                    "solution": "Çözüm: Cursor, yüksek talep nedeniyle deneme hesapları için Claude modellerini geçici olarak kısıtladı. Lütfen bekleyin ve tekrar deneyin."
+                },
+                "trialLimit": {
+                    "title": "Trial Request Limit",
+                    "error": "Hata: You've reached your trial request limit.",
+                    "solution": "Çözüm: Deneme hesabı limitinize ulaştınız. Yeni bir hesap alarak devam edebilirsiniz."
+                },
+                "blocked": {
+                    "title": "Your request has been blocked as our system",
+                    "error": "Hata: Your request has been blocked as our system has detected suspicious activity from your account/ip address.",
+                    "solution": "Çözüm: Hesabınız daha önce Cursor tarafından yasaklandıysa, IP adresiniz kara listeye alınmış olabilir. İnternet IP'nizi değiştirin veya \"Warp\" aracını kullanın: https://one.one.one.one/"
+                },
+                "connectionFailed": {
+                    "title": "Connection Failed",
+                    "error": "Hata: If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.",
+                    "solution": "Çözüm: İnternet bağlantınızı kontrol edin ve engellenmiş olabilecek bir VPN kullanmadığınızdan emin olun."
+                }
+            },
+            "questions": {
+                "title": "Sık Sorulan Sorular",
+                "whatThisToolDoes": {
+                    "question": "Bu araç ne işe yarar?",
+                    "answer": "Cursor ve Windsurf gibi kod yazmamıza yardımcı olan AI destekli IDE'ler ücretsiz planda sınırlı kullanıma sahiptir. Bu sınırlamanın üstesinden gelmek için bu aracı kullanabilirsiniz.\n\nBir hesap aldıktan sonra, aldığınız hesaba tıklayarak hesap değiştirebilirsiniz. Bu şekilde birden fazla hesap kullanabilirsiniz."
+                },
+                "howToUse": {
+                    "question": "Bu araç nasıl kullanılır?",
+                    "answer": "Hesabınıza kredi ekleyerek hesap edinmeye başlayabilirsiniz. Aldığınız hesapların bilgileri ana sayfanızda yer alacaktır. Bu hesapların detay sekmesinden hesap türüne göre diğer özelliklere erişebilirsiniz. Limit sorgulama veya hesabı otomatik açma gibi. Ancak bazı özellikler tarayıcı eklentisi gerektirebilir.\n\nHesapları aldıktan sonra hemen kullanabilirsiniz.\n\nHesap limitiniz bittikçe yeni hesap alarak kullanmaya devam edebilirsiniz. Ancak Cursor hesapları için farklı bir durum olarak kullanmadan önce herhangi bir uyarı ile karşılaşmamak için ana sayfada bulunan Cursor Deneme Sıfırlama butonunu kullanmanız iyi olacaktır. Hesapları birden almak yerine ihtiyaç halinde almanız sizin için daha iyi olacaktır. Çünkü bazen hesaplar sağlayıcılar tarafından yasaklanabilmektedir."
+                },
+                "codeDeleted": {
+                    "question": "Yeni bir hesap oluşturursam, kodlarım veya yapay zeka ile konuşmalarım (bağlam) silinecek mi?",
+                    "answer": "Hayır, silinmeyecekler."
+                }
+            },
+            "close": "Kapat"
+        }
+    }
+}

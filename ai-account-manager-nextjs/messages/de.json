@@ -1,0 +1,258 @@
+{
+    "login": {
+        "title": "Willkommen zurück",
+        "subtitle": "Greifen Sie auf Ihre KI-Tools zu und verwalten Sie Ihre Ressourcen",
+        "signInWithGoogle": "Mit Google anmelden",
+        "memberBenefits": "Mitgliedervorteile",
+        "benefits": {
+            "cost": "Kostengünstige KI-Konten mit Premium-Funktionen",
+            "analytics": "Echtzeit-Nutzungsanalyse und -überwachung",
+            "tools": "Erweiterte KI-Tool-Integration und -verwaltung"
+        },
+        "termsText": "Mit der Anmeldung akzeptieren Sie unsere",
+        "termsLink": "Nutzungsbedingungen",
+        "features": {
+            "budget": {
+                "title": "Budgetfreundlicher Zugang",
+                "description": "Premium-KI-Funktionen zu einem erschwinglichen Preis"
+            },
+            "dashboard": {
+                "title": "Einheitliches Dashboard",
+                "description": "Überwachen Sie alle Ihre Konten an einem Ort"
+            },
+            "switching": {
+                "title": "Ein-Klick-Wechsel",
+                "description": "Wechseln Sie nahtlos zwischen KI-Konten"
+            }
+        },
+        "branding": {
+            "title": "KI-Kontomanager",
+            "slogan": "Schalten Sie Premium-KI-Funktionen zu erschwinglichen Preisen frei. Eine All-in-One-Plattform zur effizienten Verwaltung Ihrer KI-Ressourcen.",
+            "copyright": "© 2025 KI-Kontomanager. Alle Rechte vorbehalten."
+        }
+    },
+    "home": {
+        "serviceNotice": {
+            "title": "Wichtiges Service-Update",
+            "message": "Unsere KI-Dienste werden bald nicht mehr verfügbar sein. Aufgrund verbesserter Sicherheitsmaßnahmen der Cursor- und Windsurf-Plattformen sind Kontoerstellung und Testzurücksetzungen jetzt problematisch. Käufe für dieses System wurden eingestellt, und wir danken allen, die es genutzt haben. Studierende können über https://cursor.com/students eine kostenlose PRO-Mitgliedschaft für 1 Jahr erhalten."
+        },
+        "creditCard": {
+            "title": "Guthaben",
+            "available": "Verfügbare Credits",
+            "activeSubscription": "Aktives Abonnement",
+            "accountBanned": "Konto gesperrt",
+            "addCredits": "Credits hinzufügen",
+            "useGiftCode": "Geschenkcode einlösen",
+            "addCreditsDialog": {
+                "title": "Credits hinzufügen",
+                "description": "Kaufen Sie zusätzliche Credits für Ihr Konto"
+            },
+            "giftCodeDialog": {
+                "title": "Geschenkcode einlösen",
+                "description": "Geben Sie Ihren Geschenkcode ein, um Credits zu erhalten",
+                "success": "Geschenkcode erfolgreich eingelöst",
+                "error": "Ungültiger Geschenkcode"
+            }
+        },
+        "actions": {
+            "purchaseAccount": "Konto kaufen",
+            "resetCursorTrial": "Cursor-Test zurücksetzen",
+            "purchaseDialog": {
+                "title": "Konto kaufen",
+                "description": "Wählen Sie einen Kontotyp zum Kauf",
+                "confirm": "Kauf bestätigen",
+                "success": "Konto erfolgreich gekauft",
+                "error": "Fehler beim Kaufvorgang"
+            },
+            "resetDialog": {
+                "title": "Cursor-Testversion zurücksetzen",
+                "description": "Folgen Sie diesen Schritten, um Ihre Cursor-Testversion zurückzusetzen",
+                "success": "Anweisungen in die Zwischenablage kopiert",
+                "note": "Schließen Sie Cursor, bevor Sie diese Befehle ausführen"
+            }
+        },
+        "accounts": {
+            "title": "KI-Konten",
+            "subtitle": "Verwalten Sie Ihre KI-Servicekonten",
+            "loading": "Konten werden geladen...",
+            "noAccounts": {
+                "title": "Keine Konten gefunden",
+                "message": "Beginnen Sie, indem Sie ein KI-Konto kaufen"
+            },
+            "tableHeaders": {
+                "account": "Konto",
+                "email": "E-Mail",
+                "created": "Erstellt",
+                "actions": "Aktionen"
+            },
+            "viewDetails": "Details anzeigen",
+            "pagination": {
+                "showing": "Anzeige",
+                "to": "-",
+                "of": "/",
+                "accounts": "Konten",
+                "previous": "Zurück",
+                "next": "Weiter"
+            }
+        },
+        "accountDetails": {
+            "title": "Kontodetails",
+            "type": "Typ",
+            "createdOn": "Erstellt am",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "remainingLimit": "Verbleibendes Limit",
+            "deleteAccount": "Konto löschen",
+            "deleting": "Wird gelöscht...",
+            "close": "Schließen",
+            "openInBrowser": "Im Browser öffnen",
+            "copyCredentials": "Anmeldedaten kopieren",
+            "extensionDialog": {
+                "title": "Browser-Erweiterung erforderlich",
+                "description": "Installieren Sie unsere Chrome-Erweiterung für automatisches Einloggen und Echtzeit-Überwachung der Kontolimits.",
+                "newVersion": "Neue Version verfügbar",
+                "installTitle": "Installationsschritte",
+                "steps": {
+                    "step1": "Laden Sie die Erweiterungsdateien herunter",
+                    "step2": "Öffnen Sie chrome://extensions/",
+                    "step3": "Aktivieren Sie den Entwicklermodus",
+                    "step4": "Klicken Sie auf 'Entpackte Erweiterung laden'",
+                    "step5": "Wählen Sie den extrahierten Ordner aus"
+                },
+                "downloadExtension": "Erweiterung herunterladen",
+                "viewSourceCode": "Quellcode anzeigen",
+                "advantages": {
+                    "title": "Vorteile",
+                    "autoLogin": "Automatische Anmeldung bei Ihren Konten",
+                    "liveMonitoring": "Echtzeit-Überwachung der Cursor-Kontolimits"
+                },
+                "close": "Schließen"
+            }
+        },
+        "resetCursorTrial": {
+            "title": "Anleitung zur Zurücksetzung der Cursor-Testversion",
+            "description": "Wählen Sie das entsprechende Betriebssystem und führen Sie den Befehl aus, um Ihre Cursor-Testversion zurückzusetzen.",
+            "linuxMacos": "Linux/macOS",
+            "archlinux": "Archlinux",
+            "windows": "Windows",
+            "copyToClipboard": "In die Zwischenablage kopieren",
+            "installVia": "Installieren über",
+            "note": "Hinweis: Schließen Sie zuerst Cursor. Führen Sie dann diese Befehle mit Administratorrechten in Ihrem Terminal aus. Für Windows-Benutzer: Stellen Sie sicher, dass Sie PowerShell als Administrator ausführen. Das Skript stammt aus dem Projekt:",
+            "project": "ai-auto-free",
+            "close": "Schließen"
+        },
+        "creditPacks": {
+            "title": "Guthaben hinzufügen",
+            "description": "Wählen Sie ein Guthaben-Paket für Ihr Konto. Jedes Guthaben kostet",
+            "credits": "Guthaben",
+            "price": "Preis",
+            "perCredit": "pro Guthaben",
+            "howCreditsWork": {
+                "title": "Wie funktioniert das Guthaben?",
+                "description": "Guthaben wird für den Kauf von Konten oder anderen Funktionen verwendet. Es handelt sich um einmalige Zahlungen, die nicht automatisch verlängert werden."
+            },
+            "useChat": "Um Guthaben zu kaufen, kontaktieren Sie uns bitte über den Chat-Support oder über Telegram",
+            "contactUs": "Kontakt",
+            "close": "Schließen",
+            "cancel": "Abbrechen",
+            "continuePayment": "Weiter zur Zahlung",
+            "processing": "Verarbeitung...",
+            "payment": "Zahlung",
+            "paymentSuccess": "Zahlung erfolgreich!",
+            "paymentSuccessDesc": "Das Guthaben wurde erfolgreich zu Ihrem Konto hinzugefügt.",
+            "redirecting": "Weiterleitung..."
+        },
+        "giftCode": {
+            "title": "Geschenkcode einlösen",
+            "description": "Geben Sie unten Ihren Geschenkcode ein, um Credits zu erhalten. Geschenkcodes haben das Format XXXX-XXXX.",
+            "label": "Geschenkcode",
+            "placeholder": "ABCD-1234",
+            "example": "Beispiel: ABCD-1234",
+            "howGiftCodesWork": {
+                "title": "Wie Geschenkcodes funktionieren",
+                "description": "Sie können Geschenkcodes verwenden, um Credits zu Ihrem Konto hinzuzufügen. Jeder Code kann nur einmal verwendet werden."
+            },
+            "redeemCode": "Code einlösen",
+            "redeeming": "Wird eingelöst...",
+            "cancel": "Abbrechen"
+        },
+        "purchaseAccount": {
+            "title": "Verfügbare Konten",
+            "subtitle": "Wählen Sie ein Konto zum Kauf",
+            "processing": "Kauf wird bearbeitet...",
+            "accountType": "Konto",
+            "noAccountTypes": "Keine verfügbaren Kontotypen gefunden",
+            "credit": "Credit",
+            "available": "verfügbar",
+            "outOfStock": "Nicht vorrätig",
+            "close": "Schließen"
+        },
+        "userMenu": {
+            "yourAccount": "Ihr Konto",
+            "adminPanel": "Admin-Panel",
+            "faqHelp": "FAQ und Hilfe",
+            "lightMode": "Heller Modus",
+            "darkMode": "Dunkler Modus",
+            "signOut": "Abmelden"
+        },
+        "copied": "Kopiert!",
+        "copyToken": "Token kopieren",
+        "faq": {
+            "title": "Häufig gestellte Fragen",
+            "commonIssues": "Häufige Probleme",
+            "issues": {
+                "tooManyAccounts": {
+                    "title": "Too many free trial accounts",
+                    "error": "Fehler: Too many free trial accounts used on this machine.",
+                    "solution": "Lösung: Es wurde festgestellt, dass Sie mehrere Cursor-Testkonten auf demselben Gerät verwenden. Um dieses Problem zu beheben, verwenden Sie die Schaltfläche \"Cursor-Testversion zurücksetzen\" auf der Startseite. Dies setzt Ihre Geräte-ID automatisch zurück und ermöglicht Ihnen die weitere Nutzung von Cursor ohne Terminal-Befehle."
+                },
+                "serversOverloaded": {
+                    "title": "Our servers are currently overloaded",
+                    "error": "Fehler: Our servers are currently overloaded for non-pro users, and you've used your free quota.",
+                    "solution": "Lösung: Dieser Fehler kann auftreten, wenn Sie Ihr Kontolimit erreicht haben. Wenn Sie immer noch ein Kontingent haben, aber diese Meldung sehen, sind die Cursor-Server möglicherweise vorübergehend für Testkonten eingeschränkt. Warten Sie eine Weile oder versuchen Sie, sich ab- und wieder anzumelden."
+                },
+                "unauthorized": {
+                    "title": "Unauthorized Request",
+                    "error": "Fehler: User is unauthorized.",
+                    "solution": "Lösung: Das von Ihnen verwendete Konto ist unberechtigt oder wurde von Cursor gesperrt."
+                },
+                "highLoad": {
+                    "title": "High Load",
+                    "error": "Fehler: We're experiencing high demand for Claude 3.7 Sonnet right now.",
+                    "solution": "Lösung: Cursor hat die Claude-Modelle für Testkonten aufgrund hoher Nachfrage vorübergehend eingeschränkt. Bitte warten Sie und versuchen Sie es später erneut."
+                },
+                "trialLimit": {
+                    "title": "Trial Request Limit",
+                    "error": "Fehler: You've reached your trial request limit.",
+                    "solution": "Lösung: Sie haben Ihr Testkontolimit erreicht. Sie können fortfahren, indem Sie ein neues Konto erwerben."
+                },
+                "blocked": {
+                    "title": "Your request has been blocked as our system",
+                    "error": "Fehler: Your request has been blocked as our system has detected suspicious activity from your account/ip address.",
+                    "solution": "Lösung: Wenn Ihr Konto zuvor von Cursor gesperrt wurde, wurde Ihre IP-Adresse möglicherweise auf die schwarze Liste gesetzt. Ändern Sie Ihre Internet-IP oder verwenden Sie das \"Warp\"-Tool: https://one.one.one.one/"
+                },
+                "connectionFailed": {
+                    "title": "Connection Failed",
+                    "error": "Fehler: If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.",
+                    "solution": "Lösung: Überprüfen Sie Ihre Internetverbindung und stellen Sie sicher, dass Sie kein VPN verwenden, das möglicherweise blockiert ist."
+                }
+            },
+            "questions": {
+                "title": "Häufig gestellte Fragen",
+                "whatThisToolDoes": {
+                    "question": "Was macht dieses Tool?",
+                    "answer": "KI-gestützte IDEs wie Cursor und Windsurf, die uns beim Programmieren helfen, haben im kostenlosen Plan eine eingeschränkte Nutzung. Sie können dieses Tool verwenden, um diese Einschränkung zu umgehen.\n\nNachdem Sie ein Konto erhalten haben, können Sie zum Konto wechseln, indem Sie auf das erhaltene Konto klicken. Auf diese Weise können Sie mehrere Konten nutzen."
+                },
+                "howToUse": {
+                    "question": "Wie benutze ich dieses Tool?",
+                    "answer": "Sie können beginnen, indem Sie Ihrem Konto Guthaben hinzufügen, um Konten zu erwerben. Die Informationen zu den Konten, die Sie kaufen, werden auf Ihrer Startseite angezeigt. Sie können über die Registerkarte 'Details' dieser Konten auf zusätzliche Funktionen zugreifen, die für jeden Kontotyp spezifisch sind, wie das Überprüfen von Limits oder das automatische Öffnen des Kontos. Einige Funktionen erfordern jedoch möglicherweise eine Browser-Erweiterung.\n\nSie können die Konten sofort nach dem Kauf verwenden.\n\nSobald Ihre Kontolimits erschöpft sind, können Sie durch den Kauf neuer Konten fortfahren. Speziell für Cursor-Konten ist es jedoch ratsam, die Schaltfläche 'Cursor-Testversion zurücksetzen' auf der Startseite zu verwenden, bevor Sie sie nutzen, um Warnungen zu vermeiden. Es ist besser, Konten nach Bedarf zu kaufen, anstatt alle auf einmal, da Konten manchmal von Anbietern gesperrt werden können."
+                },
+                "codeDeleted": {
+                    "question": "Werden mein Code oder meine Gespräche mit der KI (Kontext) gelöscht, wenn ich ein neues Konto erstelle?",
+                    "answer": "Nein, sie werden nicht gelöscht."
+                }
+            },
+            "close": "Schließen"
+        }
+    }
+}

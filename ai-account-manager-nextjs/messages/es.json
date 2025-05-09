@@ -1,0 +1,258 @@
+{
+    "login": {
+        "title": "Bienvenido de nuevo",
+        "subtitle": "Accede a tus herramientas de IA y gestiona tus recursos",
+        "signInWithGoogle": "Iniciar sesión con Google",
+        "memberBenefits": "Beneficios para miembros",
+        "benefits": {
+            "cost": "Cuentas de IA rentables con características premium",
+            "analytics": "Analíticas de uso y monitoreo en tiempo real",
+            "tools": "Integración y gestión de herramientas avanzadas de IA"
+        },
+        "termsText": "Al registrarte, aceptas nuestros",
+        "termsLink": "Términos de servicio",
+        "features": {
+            "budget": {
+                "title": "Acceso asequible",
+                "description": "Capacidades premium de IA a un precio accesible"
+            },
+            "dashboard": {
+                "title": "Panel de control unificado",
+                "description": "Monitorea todas tus cuentas en un solo lugar"
+            },
+            "switching": {
+                "title": "Cambio con un clic",
+                "description": "Cambia rápidamente entre cuentas de IA"
+            }
+        },
+        "branding": {
+            "title": "Gestor de Cuentas de IA",
+            "slogan": "Desbloquea capacidades premium de IA sin gastar de más. Tu plataforma todo en uno para gestionar eficientemente tus recursos de IA.",
+            "copyright": "© 2025 Gestor de Cuentas de IA. Todos los derechos reservados."
+        }
+    },
+    "home": {
+        "serviceNotice": {
+            "title": "Actualización importante del servicio",
+            "message": "Nuestros servicios de IA pronto no estarán disponibles. Debido a las medidas de seguridad mejoradas implementadas por las plataformas Cursor y Windsurf, las operaciones de creación de cuentas y restablecimiento de pruebas ahora son problemáticas. Las compras para este sistema se han interrumpido, y agradecemos a todos los que lo han utilizado. Los estudiantes pueden obtener una membresía PRO gratuita de 1 año a través de https://cursor.com/students."
+        },
+        "creditCard": {
+            "title": "Saldo de créditos",
+            "available": "Créditos disponibles",
+            "activeSubscription": "Suscripción activa",
+            "accountBanned": "Cuenta bloqueada",
+            "addCredits": "Añadir créditos",
+            "useGiftCode": "Usar código de regalo",
+            "addCreditsDialog": {
+                "title": "Añadir créditos",
+                "description": "Compra créditos adicionales para tu cuenta"
+            },
+            "giftCodeDialog": {
+                "title": "Canjear código de regalo",
+                "description": "Introduce un código de regalo para recibir créditos",
+                "success": "Código de regalo canjeado con éxito",
+                "error": "Código de regalo inválido"
+            }
+        },
+        "actions": {
+            "purchaseAccount": "Comprar cuenta",
+            "resetCursorTrial": "Reiniciar prueba de Cursor",
+            "purchaseDialog": {
+                "title": "Comprar cuenta",
+                "description": "Selecciona un tipo de cuenta para comprar",
+                "confirm": "Confirmar compra",
+                "success": "Cuenta comprada con éxito",
+                "error": "Error al procesar la compra"
+            },
+            "resetDialog": {
+                "title": "Reiniciar prueba de Cursor",
+                "description": "Sigue estos pasos para reiniciar tu prueba de Cursor",
+                "success": "Instrucciones copiadas al portapapeles",
+                "note": "Cierra Cursor antes de ejecutar estos comandos"
+            }
+        },
+        "accounts": {
+            "title": "Cuentas de IA",
+            "subtitle": "Gestiona tus cuentas de servicio de IA",
+            "loading": "Cargando cuentas...",
+            "noAccounts": {
+                "title": "No hay cuentas",
+                "message": "Comienza comprando una cuenta de IA"
+            },
+            "tableHeaders": {
+                "account": "Cuenta",
+                "email": "Email",
+                "created": "Creada",
+                "actions": "Acciones"
+            },
+            "viewDetails": "Ver detalles",
+            "pagination": {
+                "showing": "Mostrando",
+                "to": "-",
+                "of": "de",
+                "accounts": "cuentas",
+                "previous": "Anterior",
+                "next": "Siguiente"
+            }
+        },
+        "accountDetails": {
+            "title": "Detalles de la cuenta",
+            "type": "Tipo",
+            "createdOn": "Creada el",
+            "email": "Email",
+            "password": "Contraseña",
+            "remainingLimit": "Límite restante",
+            "deleteAccount": "Eliminar cuenta",
+            "deleting": "Eliminando...",
+            "close": "Cerrar",
+            "openInBrowser": "Abrir en navegador",
+            "copyCredentials": "Copiar credenciales",
+            "extensionDialog": {
+                "title": "Extensión de navegador requerida",
+                "description": "Instale nuestra extensión de Chrome para iniciar sesión automáticamente y monitorear los límites de la cuenta en tiempo real.",
+                "newVersion": "Nueva versión disponible",
+                "installTitle": "Pasos de instalación",
+                "steps": {
+                    "step1": "Descarga los archivos de la extensión",
+                    "step2": "Ve a chrome://extensions/",
+                    "step3": "Habilita el Modo Desarrollador",
+                    "step4": "Haz clic en 'Cargar descomprimida'",
+                    "step5": "Selecciona la carpeta extraída"
+                },
+                "downloadExtension": "Descargar extensión",
+                "viewSourceCode": "Ver código fuente",
+                "advantages": {
+                    "title": "Ventajas",
+                    "autoLogin": "Inicio de sesión automático en tus cuentas",
+                    "liveMonitoring": "Monitoreo en vivo de los límites de cuenta de Cursor"
+                },
+                "close": "Cerrar"
+            }
+        },
+        "resetCursorTrial": {
+            "title": "Instrucciones para reiniciar prueba de Cursor",
+            "description": "Selecciona tu sistema operativo y ejecuta el comando para reiniciar tu prueba de Cursor.",
+            "linuxMacos": "Linux/macOS",
+            "archlinux": "Archlinux",
+            "windows": "Windows",
+            "copyToClipboard": "Copiar al portapapeles",
+            "installVia": "Instalar vía",
+            "note": "Nota: Primero cierra Cursor. Luego ejecuta estos comandos en tu terminal con privilegios de administrador. Para usuarios de Windows, asegúrate de ejecutar PowerShell como Administrador. El script es del proyecto:",
+            "project": "ai-auto-free",
+            "close": "Cerrar"
+        },
+        "creditPacks": {
+            "title": "Añadir Créditos",
+            "description": "Selecciona un paquete de créditos para añadir a tu cuenta. Cada crédito cuesta",
+            "credits": "Créditos",
+            "price": "Precio",
+            "perCredit": "por crédito",
+            "howCreditsWork": {
+                "title": "¿Cómo funcionan los créditos?",
+                "description": "Los créditos se utilizan para comprar cuentas u otras funciones. Son pagos únicos y no se renuevan automáticamente."
+            },
+            "useChat": "Para comprar créditos, por favor contáctanos a través del chat de soporte o por Telegram",
+            "contactUs": "Contáctanos",
+            "close": "Cerrar",
+            "cancel": "Cancelar",
+            "continuePayment": "Continuar al Pago",
+            "processing": "Procesando...",
+            "payment": "Pago",
+            "paymentSuccess": "¡Pago Exitoso!",
+            "paymentSuccessDesc": "Los créditos se han añadido correctamente a tu cuenta.",
+            "redirecting": "Redirigiendo..."
+        },
+        "giftCode": {
+            "title": "Canjear código de regalo",
+            "description": "Introduce tu código de regalo para recibir créditos. Los códigos de regalo tienen el formato XXXX-XXXX.",
+            "label": "Código de regalo",
+            "placeholder": "ABCD-1234",
+            "example": "Ejemplo: ABCD-1234",
+            "howGiftCodesWork": {
+                "title": "Cómo funcionan los códigos de regalo",
+                "description": "Puedes canjear códigos de regalo para añadir créditos a tu cuenta. Cada código solo puede ser usado una vez."
+            },
+            "redeemCode": "Canjear código",
+            "redeeming": "Canjeando...",
+            "cancel": "Cancelar"
+        },
+        "purchaseAccount": {
+            "title": "Cuentas disponibles",
+            "subtitle": "Elige una cuenta para comprar",
+            "processing": "Procesando compra...",
+            "accountType": "Cuenta",
+            "noAccountTypes": "No hay tipos de cuenta disponibles",
+            "credit": "Crédito",
+            "available": "disponible",
+            "outOfStock": "Agotado",
+            "close": "Cerrar"
+        },
+        "userMenu": {
+            "yourAccount": "Tu cuenta",
+            "adminPanel": "Panel de administración",
+            "faqHelp": "FAQ y ayuda",
+            "lightMode": "Modo claro",
+            "darkMode": "Modo oscuro",
+            "signOut": "Cerrar sesión"
+        },
+        "copied": "¡Copiado!",
+        "copyToken": "Copiar token",
+        "faq": {
+            "title": "Preguntas frecuentes",
+            "commonIssues": "Problemas comunes",
+            "issues": {
+                "tooManyAccounts": {
+                    "title": "Too many free trial accounts",
+                    "error": "Error: Too many free trial accounts used on this machine.",
+                    "solution": "Solución: Se ha detectado que estás utilizando varias cuentas de prueba de Cursor en el mismo dispositivo. Para solucionar esto, simplemente utiliza el botón \"Reiniciar prueba de Cursor\" en la página principal. Esto reiniciará automáticamente el ID de tu máquina y te permitirá seguir usando Cursor sin necesidad de comandos de terminal."
+                },
+                "serversOverloaded": {
+                    "title": "Our servers are currently overloaded",
+                    "error": "Error: Our servers are currently overloaded for non-pro users, and you've used your free quota.",
+                    "solution": "Solución: Este error puede aparecer cuando has alcanzado el límite de tu cuenta. Si todavía tienes cuota pero ves esto, los servidores de Cursor pueden estar temporalmente restringidos para cuentas de prueba. Espera un momento o intenta cerrar sesión y volver a iniciarla."
+                },
+                "unauthorized": {
+                    "title": "Unauthorized Request",
+                    "error": "Error: User is unauthorized.",
+                    "solution": "Solución: La cuenta que estás utilizando no está autorizada o ha sido bloqueada por Cursor."
+                },
+                "highLoad": {
+                    "title": "High Load",
+                    "error": "Error: We're experiencing high demand for Claude 3.7 Sonnet right now.",
+                    "solution": "Solución: Cursor ha restringido temporalmente los modelos Claude para cuentas de prueba debido a la alta demanda. Por favor, espera e intenta de nuevo más tarde."
+                },
+                "trialLimit": {
+                    "title": "Trial Request Limit",
+                    "error": "Error: You've reached your trial request limit.",
+                    "solution": "Solución: Has alcanzado el límite de tu cuenta de prueba. Puedes continuar obteniendo una nueva cuenta."
+                },
+                "blocked": {
+                    "title": "Your request has been blocked as our system",
+                    "error": "Error: Your request has been blocked as our system has detected suspicious activity from your account/ip address.",
+                    "solution": "Solución: Si tu cuenta ha sido previamente prohibida por Cursor, tu dirección IP puede estar en la lista negra. Cambia tu IP de internet o usa la herramienta \"Warp\": https://one.one.one.one/"
+                },
+                "connectionFailed": {
+                    "title": "Connection Failed",
+                    "error": "Error: If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.",
+                    "solution": "Solución: Comprueba tu conexión a internet y asegúrate de no estar utilizando una VPN que pueda estar bloqueada."
+                }
+            },
+            "questions": {
+                "title": "Preguntas frecuentes",
+                "whatThisToolDoes": {
+                    "question": "¿Qué hace esta herramienta?",
+                    "answer": "Los IDEs con IA como Cursor y Windsurf que nos ayudan a programar tienen un uso limitado en el plan gratuito. Puedes usar esta herramienta para superar esta limitación.\n\nDespués de obtener una cuenta, puedes cambiar a esa cuenta haciendo clic en la cuenta que recibiste. De esta manera, puedes usar múltiples cuentas."
+                },
+                "howToUse": {
+                    "question": "¿Cómo uso esta herramienta?",
+                    "answer": "Puedes comenzar añadiendo créditos a tu cuenta para adquirir cuentas. La información de las cuentas que compres aparecerá en tu página principal. Puedes acceder a características adicionales específicas para cada tipo de cuenta desde la pestaña de detalles de estas cuentas, como verificar límites o abrir automáticamente la cuenta. Sin embargo, algunas funciones pueden requerir una extensión de navegador.\n\nPuedes usar las cuentas inmediatamente después de comprarlas.\n\nA medida que se agoten los límites de tu cuenta, puedes continuar comprando nuevas cuentas. Sin embargo, específicamente para las cuentas de Cursor, es recomendable usar el botón Restablecer Prueba de Cursor en la página principal antes de usarlas para evitar encontrarte con advertencias. Es mejor comprar cuentas según las necesites en lugar de todas a la vez, ya que a veces los proveedores pueden prohibir las cuentas."
+                },
+                "codeDeleted": {
+                    "question": "Si creo una nueva cuenta, ¿se eliminarán mi código o conversaciones con IA (contexto)?",
+                    "answer": "No, no se eliminarán."
+                }
+            },
+            "close": "Cerrar"
+        }
+    }
+}

@@ -1,0 +1,258 @@
+{
+    "login": {
+        "title": "Welcome back",
+        "subtitle": "Access your AI toolkit and manage your resources",
+        "signInWithGoogle": "Sign in with Google",
+        "memberBenefits": "Member Benefits",
+        "benefits": {
+            "cost": "Cost-effective AI accounts with premium features",
+            "analytics": "Real-time usage analytics and monitoring",
+            "tools": "Advanced AI tools integration and management"
+        },
+        "termsText": "By signing in, you agree to our",
+        "termsLink": "Terms of Service",
+        "features": {
+            "budget": {
+                "title": "Budget-Friendly Access",
+                "description": "Premium AI capabilities at fraction of the cost"
+            },
+            "dashboard": {
+                "title": "Unified Dashboard",
+                "description": "Monitor all your accounts in one place"
+            },
+            "switching": {
+                "title": "One-Click Switching",
+                "description": "Seamlessly switch between AI accounts"
+            }
+        },
+        "branding": {
+            "title": "AI Accounts",
+            "slogan": "Unlock premium AI capabilities without breaking the bank. Your all-in-one platform for managing AI resources efficiently.",
+            "copyright": "© 2025 AI Accounts. All rights reserved."
+        }
+    },
+    "home": {
+        "serviceNotice": {
+            "title": "Important Service Update",
+            "message": "Our AI Services will soon be unavailable. Due to enhanced security measures implemented by Cursor and Windsurf platforms, account creation and trial reset operations are now problematic. Purchases for this system have been discontinued, and we thank everyone who has used it. Students can obtain a 1-year free PRO membership via https://cursor.com/students."
+        },
+        "creditCard": {
+            "title": "Credit Balance",
+            "available": "Available credits",
+            "activeSubscription": "Active subscription",
+            "accountBanned": "Account banned",
+            "addCredits": "Add Credits",
+            "useGiftCode": "Use Gift Code",
+            "addCreditsDialog": {
+                "title": "Add Credits",
+                "description": "Purchase additional credits for your account"
+            },
+            "giftCodeDialog": {
+                "title": "Redeem Gift Code",
+                "description": "Enter your gift code to receive credits",
+                "success": "Gift code redeemed successfully",
+                "error": "Invalid gift code"
+            }
+        },
+        "actions": {
+            "purchaseAccount": "Purchase Account",
+            "resetCursorTrial": "Reset Cursor Trial",
+            "purchaseDialog": {
+                "title": "Purchase Account",
+                "description": "Select an account type to purchase",
+                "confirm": "Confirm Purchase",
+                "success": "Account purchased successfully",
+                "error": "Error processing purchase"
+            },
+            "resetDialog": {
+                "title": "Reset Cursor Trial",
+                "description": "Follow these steps to reset your Cursor trial",
+                "success": "Instructions copied to clipboard",
+                "note": "Close Cursor before running these commands"
+            }
+        },
+        "accounts": {
+            "title": "AI Accounts",
+            "subtitle": "Manage your AI service accounts",
+            "loading": "Loading accounts...",
+            "noAccounts": {
+                "title": "No accounts",
+                "message": "Get started by purchasing an AI account"
+            },
+            "tableHeaders": {
+                "account": "Account",
+                "email": "Email",
+                "created": "Created",
+                "actions": "Actions"
+            },
+            "viewDetails": "View Details",
+            "pagination": {
+                "showing": "Showing",
+                "to": "to",
+                "of": "of",
+                "accounts": "accounts",
+                "previous": "Previous",
+                "next": "Next"
+            }
+        },
+        "accountDetails": {
+            "title": "Account Details",
+            "type": "Type",
+            "createdOn": "Created On",
+            "email": "Email",
+            "password": "Password",
+            "remainingLimit": "Remaining Limit",
+            "deleteAccount": "Delete Account",
+            "deleting": "Deleting...",
+            "close": "Close",
+            "openInBrowser": "Open in Browser",
+            "copyCredentials": "Copy Credentials",
+            "extensionDialog": {
+                "title": "Browser Extension Required",
+                "description": "Install our Chrome extension to auto-login and monitor account limits in real-time.",
+                "newVersion": "New version available ",
+                "installTitle": "Installation Steps",
+                "steps": {
+                    "step1": "Download the extension files",
+                    "step2": "Go to chrome://extensions/",
+                    "step3": "Enable Developer Mode",
+                    "step4": "Click 'Load unpacked'",
+                    "step5": "Select the extracted folder"
+                },
+                "downloadExtension": "Download Extension",
+                "viewSourceCode": "View Source Code",
+                "advantages": {
+                    "title": "Advantages",
+                    "autoLogin": "Automatic login to your accounts",
+                    "liveMonitoring": "Live monitoring of Cursor account limits"
+                },
+                "close": "Close"
+            }
+        },
+        "resetCursorTrial": {
+            "title": "Reset Cursor Trial Instructions",
+            "description": "Select your operating system below and run the command to reset your Cursor trial.",
+            "linuxMacos": "Linux/macOS",
+            "archlinux": "Archlinux",
+            "windows": "Windows",
+            "copyToClipboard": "Copy to clipboard",
+            "installVia": "Install via",
+            "note": "Note: First, close Cursor. Then run these commands in your terminal with administrator privileges. For Windows users, make sure to run PowerShell as Administrator. The script is from the",
+            "project": "ai-auto-free",
+            "close": "Close"
+        },
+        "creditPacks": {
+            "title": "Add Credits",
+            "description": "Select a credit package to add to your account. Each credit costs",
+            "credits": "Credits",
+            "price": "Price",
+            "perCredit": "per credit",
+            "howCreditsWork": {
+                "title": "How do credits work?",
+                "description": "Credits are used to purchase accounts or other features. They are one-time payments and do not renew automatically."
+            },
+            "useChat": "To purchase credits, please contact us through chat support or via Telegram",
+            "contactUs": "Contact us",
+            "close": "Close",
+            "cancel": "Cancel",
+            "continuePayment": "Continue to Payment",
+            "processing": "Processing...",
+            "payment": "Payment",
+            "paymentSuccess": "Payment Successful!",
+            "paymentSuccessDesc": "Credits have been successfully added to your account.",
+            "redirecting": "Redirecting..."
+        },
+        "giftCode": {
+            "title": "Redeem Gift Code",
+            "description": "Enter your gift code below to redeem credits. Gift codes are in the format XXXX-XXXX.",
+            "label": "Gift Code",
+            "placeholder": "ABCD-1234",
+            "example": "Example: ABCD-1234",
+            "howGiftCodesWork": {
+                "title": "How gift codes work",
+                "description": "You can redeem gift codes to add credits to your account. Each code can only be used once."
+            },
+            "redeemCode": "Redeem Code",
+            "redeeming": "Redeeming...",
+            "cancel": "Cancel"
+        },
+        "purchaseAccount": {
+            "title": "Available Accounts",
+            "subtitle": "Choose an account to purchase",
+            "processing": "Processing purchase...",
+            "accountType": "Account",
+            "noAccountTypes": "No account types available",
+            "credit": "Credit",
+            "available": "available",
+            "outOfStock": "Out of stock",
+            "close": "Close"
+        },
+        "userMenu": {
+            "yourAccount": "Your Account",
+            "adminPanel": "Admin Panel",
+            "faqHelp": "FAQ & Help",
+            "lightMode": "Light Mode",
+            "darkMode": "Dark Mode",
+            "signOut": "Sign Out"
+        },
+        "copied": "Copied!",
+        "copyToken": "Copy Token",
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "commonIssues": "Common Issues",
+            "issues": {
+                "tooManyAccounts": {
+                    "title": "Too many free trial accounts",
+                    "error": "Error: Too many free trial accounts used on this machine.",
+                    "solution": "Solution: You have been detected for using multiple Cursor trial accounts on the same device. To solve this, simply use the \"Reset Cursor Trial\" button on the main page. This will automatically reset your machine ID and allow you to continue using Cursor without any terminal commands."
+                },
+                "serversOverloaded": {
+                    "title": "Our servers are currently overloaded",
+                    "error": "Error: Our servers are currently overloaded for non-pro users, and you've used your free quota.",
+                    "solution": "Solution: This error may appear when your account limit is reached. If you still have quota but see this, Cursor servers may be temporarily restricted for trial accounts. Wait a while or try logging out and back in."
+                },
+                "unauthorized": {
+                    "title": "Unauthorized Request",
+                    "error": "Error: User is unauthorized.",
+                    "solution": "Solution: The account you are using is unauthorized or blocked by Cursor."
+                },
+                "highLoad": {
+                    "title": "High Load",
+                    "error": "Error: We're experiencing high demand for Claude 3.7 Sonnet right now.",
+                    "solution": "Solution: Cursor has temporarily restricted Claude models for trial accounts due to high demand. Please wait and try again."
+                },
+                "trialLimit": {
+                    "title": "Trial Request Limit",
+                    "error": "Error: You've reached your trial request limit.",
+                    "solution": "Solution: Your trial account limit is reached. You can continue by obtaining a new account."
+                },
+                "blocked": {
+                    "title": "Your request has been blocked as our system",
+                    "error": "Error: Your request has been blocked as our system has detected suspicious activity from your account/ip address.",
+                    "solution": "Solution: If your account has been previously banned by Cursor, your IP address may be blacklisted. Change your internet IP or use the \"Warp\" tool: https://one.one.one.one/"
+                },
+                "connectionFailed": {
+                    "title": "Connection Failed",
+                    "error": "Error: If the problem persists, please check your internet connection or VPN, or email us at hi@cursor.sh.",
+                    "solution": "Solution: Check your internet connection and make sure you're not using a VPN that might be blocked."
+                }
+            },
+            "questions": {
+                "title": "Frequently Asked Questions",
+                "whatThisToolDoes": {
+                    "question": "What does this tool do?",
+                    "answer": "AI-powered IDEs like Cursor and Windsurf that help us code have limited use in the free plan. You can use this tool to overcome this limitation.\n\nAfter getting an account, you can switch to the account by clicking on the account you received. This way, you can use multiple accounts."
+                },
+                "howToUse": {
+                    "question": "How do I use this tool?",
+                    "answer": "You can start by adding credits to your account to acquire accounts. The information for the accounts you purchase will be displayed on your home page. You can access additional features specific to each account type from the details tab of these accounts, such as checking limits or automatically opening the account. However, some features may require a browser extension.\n\nYou can use the accounts immediately after purchasing them.\n\nAs your account limits are exhausted, you can continue by purchasing new accounts. However, for Cursor accounts specifically, it's advisable to use the Cursor Trial Reset button on the home page before using them to avoid encountering any warnings. It's better to purchase accounts as needed rather than all at once, as accounts can sometimes be banned by providers."
+                },
+                "codeDeleted": {
+                    "question": "If I create a new account, will my code or conversations with AI (context) be deleted?",
+                    "answer": "No, they won't be deleted."
+                }
+            },
+            "close": "Close"
+        }
+    }
+}
