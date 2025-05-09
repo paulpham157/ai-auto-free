@@ -1,0 +1,103 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Scrollbar stillemesi */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.account-card {
+    animation: fadeIn 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+.account-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Buton stillemesi */
+button {
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    filter: brightness(120%);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Tab içeriği için geçiş efekti */
+.tab-pane {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tab-pane.hidden {
+    display: none;
+}
+
+/* Log alanı */
+#logMessages div {
+    padding: 3px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+#logMessages div:last-child {
+    border-bottom: none;
+}
+
+/* Codeium renk vurgusu */
+.text-blue-300 {
+    color: #93c5fd;
+}
+
+.bg-blue-800 {
+    background-color: #1e40af;
+}
+
+.bg-blue-900 {
+    background-color: #1e3a8a;
+}
+
+/* Cursor renk vurgusu */
+.text-green-300 {
+    color: #86efac;
+}
+
+.bg-green-800 {
+    background-color: #166534;
+}
+
+.bg-green-900 {
+    background-color: #14532d;
+}

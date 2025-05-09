@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Paneli</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/admin-styles.css" />
+  </head>
+  <body>
+    <!-- Mobil menü butonu -->
+    <button class="mobile-menu-toggle" id="sidebarToggle">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 col-lg-2 sidebar" id="sidebar">
+          <h3 class="admin-panel-title">Admin Paneli</h3>
+          <!-- Günlük Giriş İstatistikleri Menü Öğesi -->
+          <div class="nav-stats-item d-flex align-items-center justify-content-between p-2 my-3 bg-dark rounded shadow-sm" id="showLoginStatsBtn">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-graph-up me-2 text-primary"></i>
+              <span class="text-white">Günlük Giriş</span>
+            </div>
+            <div id="dailyLoginCount" class="badge bg-primary rounded-pill px-2">0</div>
+          </div>
+          <div class="nav flex-column">
+            <a class="nav-link" href="#" data-tab="calculation-tab"><i class="bi bi-calculator me-2"></i>Hesaplama</a>
+            <a class="nav-link" href="#" data-tab="user-tab"><i class="bi bi-people-fill me-2"></i>Kullanıcı Yönetimi</a>
+            <a class="nav-link" href="#" data-tab="pool-accounts"><i class="bi bi-database-fill me-2"></i>Havuz Hesapları</a>
+            <a class="nav-link" href="#" data-tab="active-accounts"><i class="bi bi-check-circle-fill me-2"></i>Aktif Hesaplar</a>
+            <a class="nav-link" href="#" data-tab="notifications-tab"><i class="bi bi-bell-fill me-2"></i>Bildirimler</a>
+            <a class="nav-link" href="#" data-tab="services-tab"><i class="bi bi-gear-fill me-2"></i>Servis Ayarları</a>
+            <a class="nav-link" href="#" data-tab="pricing-tab"><i class="bi bi-currency-dollar me-2"></i>Fiyatlandırma</a>
+            <a class="nav-link" href="#" data-tab="update-tab"><i class="bi bi-arrow-up-circle-fill me-2"></i>Güncelleme</a>
+            <a class="nav-link text-danger fw-bold d-flex align-items-center justify-content-between" href="/admin/logout">
+              <span><i class="bi bi-box-arrow-right me-2"></i>Çıkış Yap</span>
+              <i class="bi bi-arrow-right-circle ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-9 col-lg-10 main-content">
+          <!-- Kullanıcı Yönetimi Tab -->
+          <div id="user-tab" class="tab-content">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Kullanıcı Arama</h5>
+              </div>
+              <div class="card-body">
+                <form id="searchForm" method="POST" action="/admin/search">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="uuid" class="form-label">Kullanıcı UUID:</label>
+                        <input type="text" class="form-control" id="uuid" name="uuid" required />
+                      </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                      <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search me-2"></i>Ara</button>
+                    </div>
+                  </div>
+                </form>
+
+                <div id="searchResult" class="search-result">
+                  <!-- Arama sonuçları burada gösterilecek -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Havuz Hesapları Tab -->
+          <div id="pool-accounts" class="tab-content">
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                  <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <div>
+                      <h4 class="mb-1 d-flex align-items-center">
+                        Havuz Hesapları
+                        <span id="poolAccountsCount" class="ms-2 fs-5 fw-normal text-primary" style="display: none"> 0 </span>
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button id="loadPoolAccountsBtn" class="btn btn-success btn-sm-block"><i class="bi bi-eye me-2"></i>Hesapları Göster</button>
+                    <button id="selectDomainAccountsBtn" class="btn btn-warning btn-sm-block text-white"><i class="bi bi-funnel me-2"></i>JSON (Cursor)</button>
+                    <button id="selectWindsurfAccountsBtn" class="btn btn-info btn-sm-block text-white"><i class="bi bi-funnel me-2"></i>JSON (Windsurf)</button>
+                    <button class="btn btn-primary btn-sm-block" data-bs-toggle="modal" data-bs-target="#addAccountModal"><i class="bi bi-plus-circle me-2"></i>Yeni Hesap Ekle</button>
+                    <button class="btn btn-info text-white btn-sm-block" data-bs-toggle="modal" data-bs-target="#addMultipleAccountsModal"><i class="bi bi-plus-circle-fill me-2"></i>Çoklu Hesap Ekle</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Özellik Filtresi -->
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label for="featureFilter" class="form-label fw-semibold"><i class="bi bi-tag me-1"></i>Özelliğe Göre Filtrele:</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light"><i class="bi bi-list-check"></i></span>
+                      <select class="form-select" id="featureFilter">
+                        <option value="">Tüm Hesaplar</option>
+                        <!-- Özellikler burada listelenecek -->
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="domainFilter" class="form-label fw-semibold"><i class="bi bi-at me-1"></i>Domain Filtresi:</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light"><i class="bi bi-globe"></i></span>
+                      <input type="text" class="form-control" id="domainFilter" placeholder="örn: gmail.com" />
+                    </div>
+                  </div>
+                  <div class="col-md-4 d-flex align-items-end">
+                    <button id="applyFiltersBtn" class="btn btn-primary w-100 d-flex align-items-center justify-content-center"><i class="bi bi-search me-2"></i>Filtreleri Uygula</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <tbody id="poolAccountsTable">
+                      <tr>
+                        <td colspan="4" class="text-center">Hesapları görmek için "Hesapları Göster" butonuna tıklayın.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aktif Hesaplar Tab -->
+          <div id="active-accounts" class="tab-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h4 class="me-3">
+                Aktif Hesaplar <span id="activeAccountsCount" class="badge bg-primary rounded-pill shadow-sm" style="display: none; font-size: 0.7rem; padding: 0.25rem 0.5rem; vertical-align: middle; font-weight: 600; letter-spacing: 0.5px; border: 1px solid rgba(255, 255, 255, 0.2)">0</span>
+              </h4>
+              <div>
+                <a id="downloadCsvBtn" href="/admin/accounts/active/csv" class="btn btn-success btn-sm ms-auto" style="display: none"><i class="bi bi-download me-2"></i>CSV İndir</a>
+                <button id="clearActiveAccountsBtn" class="btn btn-danger btn-sm ms-auto"><i class="bi bi-trash me-2"></i>Temizle</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-sm">
+                    <thead>
+                      <tr>
+                        <th data-label="Email">Email</th>
+                        <th data-label="Token" class="d-none d-md-table-cell">Token</th>
+                        <th data-label="Özellik" style="width: 80px">Özellik</th>
+                        <th data-label="Kullanıcı ID" class="d-none d-lg-table-cell">Kullanıcı ID</th>
+                        <th data-label="Şifre" class="d-none d-md-table-cell">Şifre</th>
+                        <th data-label="API Key" class="d-none d-lg-table-cell">API Key</th>
+                        <th data-label="Ref. Token" class="d-none d-lg-table-cell">Refresh Token</th>
+                        <th data-label="Atanma" class="d-none d-md-table-cell">Atanma Tarihi</th>
+                        <th data-label="İşlem">İşlem</th>
+                      </tr>
+                    </thead>
+                    <tbody id="activeAccountsTable">
+                      <tr>
+                        <td colspan="9" class="text-center">Aktif hesap bulunamadı</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobil görünüm için kılavuz bilgisi -->
+            <div class="d-md-none mt-3 alert alert-info">
+              <p class="mb-0 small"><i class="bi bi-info-circle me-1"></i> Daha fazla detay görmek için hesabın üzerine tıklayabilir veya telefonu yatay çevirebilirsiniz.</p>
+            </div>
+          </div>
+
+          <!-- Bildirimler Tab -->
+          <div id="notifications-tab" class="tab-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h4>Bildirimler</h4>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNotificationModal"><i class="bi bi-plus-circle me-2"></i>Yeni Bildirim Ekle</button>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Türkçe Mesaj</th>
+                        <th>İngilizce Mesaj</th>
+                        <th>İşlemler</th>
+                      </tr>
+                    </thead>
+                    <tbody id="notificationsTable">
+                      <tr>
+                        <td colspan="4" class="text-center">Bildirim bulunamadı</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Servis Ayarları Tab -->
+          <div id="services-tab" class="tab-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h4>Servis Ayarları</h4>
+              <button class="btn btn-success" id="saveServicesBtn"><i class="bi bi-save me-2"></i>Tüm Değişiklikleri Kaydet</button>
+            </div>
+
+            <div class="row">
+              <!-- Sol Kolon - Genel Ayarlar -->
+              <div class="col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="bi bi-gear me-2"></i>Genel Ayarlar</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <label for="repositoryUrl" class="form-label">Repository URL:</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-github"></i></span>
+                        <input type="text" class="form-control" id="repositoryUrl" placeholder="https://github.com/user/repo" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="freeCredits" class="form-label">Ücretsiz Kredi:</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-gift"></i></span>
+                        <input type="number" class="form-control" id="freeCredits" min="0" placeholder="Ücretsiz kredi sayısı" />
+                        <button class="btn btn-success" id="saveFreeCreditsBtn"><i class="bi bi-save me-2"></i>Kaydet</button>
+                      </div>
+                      <small class="text-muted">Yeni kayıt olan kullanıcılara verilecek ücretsiz kredi miktarı</small>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="needsFiles" class="form-label">Gerekli Dosyalar:</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-file-earmark-text"></i></span>
+                        <input type="text" class="form-control" id="needsFiles" placeholder="file1.js, file2.js" />
+                      </div>
+                      <small class="text-muted">Virgülle ayırarak girin</small>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="dependencies" class="form-label">Bağımlılıklar:</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-box"></i></span>
+                        <input type="text" class="form-control" id="dependencies" placeholder="package1, package2" />
+                      </div>
+                      <small class="text-muted">Virgülle ayırarak girin</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sağ Kolon - Özellikler -->
+              <div class="col-lg-8 mb-4">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="bi bi-list-check me-2"></i>Özellikler</h5>
+                    <button class="btn btn-primary" id="addFeatureBtn"><i class="bi bi-plus-circle me-2"></i>Yeni Özellik Ekle</button>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="featureSearchInput" placeholder="Özellik ara..." />
+                    </div>
+
+                    <div id="featuresContainer" class="features-accordion">
+                      <!-- Özellikler burada listelenecek -->
+                      <div class="text-center py-3">
+                        <div class="spinner-border text-primary" role="status">
+                          <span class="visually-hidden">Yükleniyor...</span>
+                        </div>
+                        <p class="mt-2">Özellikler yükleniyor...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fiyatlandırma Tab -->
+          <div id="pricing-tab" class="tab-content">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Fiyatlandırma Ayarları</h5>
+                <button class="btn btn-primary" id="savePricingBtn">Kaydet</button>
+              </div>
+              <div class="card-body">
+                <form id="pricingForm">
+                  <div class="mb-3">
+                    <label for="creditPrice" class="form-label">Kredi Fiyatı:</label>
+                    <input type="number" class="form-control" id="creditPrice" step="0.01" min="0" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pricingName" class="form-label">İsim:</label>
+                    <input type="text" class="form-control" id="pricingName" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pricingImage" class="form-label">Resim URL:</label>
+                    <input type="text" class="form-control" id="pricingImage" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="pricingUrl" class="form-label">Ödeme URL:</label>
+                    <input type="text" class="form-control" id="pricingUrl" required />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Mesajlar:</label>
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <div class="mb-3">
+                          <label for="pricingMsgTr" class="form-label">Türkçe:</label>
+                          <textarea class="form-control" id="pricingMsgTr" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="pricingMsgEn" class="form-label">İngilizce:</label>
+                          <textarea class="form-control" id="pricingMsgEn" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="pricingMsgZh" class="form-label">Çince:</label>
+                          <textarea class="form-control" id="pricingMsgZh" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Sosyal Medya:</label>
+                    <div id="socialsContainer">
+                      <!-- Sosyal medya öğeleri burada dinamik olarak oluşturulacak -->
+                    </div>
+                    <button type="button" class="btn btn-success mt-2" id="addSocialBtn">Sosyal Medya Ekle</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Güncelleme Tab -->
+          <div id="update-tab" class="tab-content">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Güncelleme Ayarları</h5>
+                <button class="btn btn-primary" id="saveUpdateBtn">Kaydet</button>
+              </div>
+              <div class="card-body">
+                <form id="updateForm">
+                  <div class="mb-3">
+                    <label for="updateVersion" class="form-label">Versiyon:</label>
+                    <input type="text" class="form-control" id="updateVersion" required />
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="updateMandatory" />
+                      <label class="form-check-label" for="updateMandatory"> Zorunlu Güncelleme </label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="updateChanges" class="form-label">Değişiklikler:</label>
+                    <textarea class="form-control" id="updateChanges" rows="3" required></textarea>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">İndirme Linkleri:</label>
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <div class="mb-3">
+                          <label for="updateUrlWindows" class="form-label">Windows:</label>
+                          <input type="text" class="form-control" id="updateUrlWindows" required />
+                        </div>
+                        <div class="mb-3">
+                          <label for="updateUrlMacos" class="form-label">MacOS:</label>
+                          <input type="text" class="form-control" id="updateUrlMacos" required />
+                        </div>
+                        <div class="mb-3">
+                          <label for="updateUrlLinux" class="form-label">Linux:</label>
+                          <input type="text" class="form-control" id="updateUrlLinux" required />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hesaplama Tab -->
+          <div id="calculation-tab" class="tab-content">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Döviz Hesaplama</h5>
+              </div>
+              <div class="card-body">
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-header bg-light">
+                        <h6 class="mb-0"><i class="bi bi-currency-exchange me-2"></i>Güncel Döviz Kurları</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <span>1 USD =</span>
+                          <span id="usdToTry" class="badge bg-primary p-2">Yükleniyor...</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <span>1 Kredi =</span>
+                          <span id="creditPriceDisplay" class="badge bg-success p-2">Yükleniyor...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-header bg-light">
+                        <h6 class="mb-0"><i class="bi bi-calculator me-2"></i>Kredi Hesaplama</h6>
+                      </div>
+                      <div class="card-body">
+                        <form id="calculationForm">
+                          <div class="mb-3">
+                            <label for="amount" class="form-label">Tutar:</label>
+                            <input type="number" class="form-control" id="amount" step="0.01" min="0" required />
+                          </div>
+                          <div class="mb-3">
+                            <label for="currency" class="form-label">Para Birimi:</label>
+                            <select class="form-select" id="currency" required>
+                              <option value="TRY">TL (₺)</option>
+                              <option value="USD">Dolar ($)</option>
+                            </select>
+                          </div>
+                          <button type="button" class="btn btn-primary" id="calculateBtn">Hesapla</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                  <div class="card-header bg-light">
+                    <h6 class="mb-0"><i class="bi bi-info-circle me-2"></i>Hesaplama Sonucu</h6>
+                  </div>
+                  <div class="card-body">
+                    <div id="calculationResult" class="alert alert-info">Hesaplama yapmak için yukarıdaki formu doldurup "Hesapla" butonuna tıklayın.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hesap Ekleme Modal -->
+    <div class="modal fade" id="addAccountModal" tabindex="-1" aria-labelledby="addAccountModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addAccountModalLabel">Yeni Hesap Ekle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addAccountForm">
+              <div class="mb-3">
+                <label for="accountToken" class="form-label">Token:</label>
+                <input type="text" class="form-control" id="accountToken" />
+              </div>
+              <div id="windsurfFields" style="display: none">
+                <div class="mb-3">
+                  <label for="accountApiKey" class="form-label">API Key:</label>
+                  <input type="text" class="form-control" id="accountApiKey" />
+                </div>
+                <div class="mb-3">
+                  <label for="accountRefreshToken" class="form-label">Refresh Token:</label>
+                  <input type="text" class="form-control" id="accountRefreshToken" />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="accountEmail" class="form-label">E-posta:</label>
+                <input type="email" class="form-control" id="accountEmail" required />
+              </div>
+              <div class="mb-3">
+                <label for="accountPassword" class="form-label">Şifre:</label>
+                <input type="text" class="form-control" id="accountPassword" required />
+              </div>
+              <div class="mb-3">
+                <label for="accountFeature" class="form-label">Özellik:</label>
+                <select class="form-select" id="accountFeature" required>
+                  <option value="">Özellik seçin...</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-primary" id="saveAccountBtn">Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Çoklu Hesap Ekleme Modal -->
+    <div class="modal fade" id="addMultipleAccountsModal" tabindex="-1" aria-labelledby="addMultipleAccountsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addMultipleAccountsModalLabel">Çoklu Hesap Ekle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="accountFeatureMultiple" class="form-label">Özellik:</label>
+              <select class="form-select" id="accountFeatureMultiple" required>
+                <option value="">Özellik seçin...</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="multipleAccountsText" class="form-label">Hesap Bilgileri:</label>
+              <div class="form-text mb-2" id="formatDescription">
+                Aşağıdaki formatlarda hesap bilgilerini girebilirsiniz:
+                <br />
+                <strong>Format 1:</strong> Token, Email, Şifre (her biri ayrı satırda)
+                <br />
+                <strong>Format 2:</strong> Email, Şifre (her biri ayrı satırda) <br /><br />
+                <strong>Örnek:</strong>
+                <pre class="bg-light p-2 rounded">
+token123456
+user@example.com
+password123
+
+another@example.com
+anotherpass456</pre
+                >
+              </div>
+              <div class="form-text mb-2" id="windsurfFormatDescription" style="display: none">
+                Windsurf hesapları için aşağıdaki formatta bilgileri girebilirsiniz:
+                <br />
+                <strong>Format:</strong> API Key, Refresh Token, Email, Şifre (her biri ayrı satırda) <br /><br />
+                <strong>Örnek:</strong>
+                <pre class="bg-light p-2 rounded">
+api_key_123456
+refresh_token_123456
+windsurf@example.com
+password123
+
+api_key_789012
+refresh_token_789012
+another@example.com
+anotherpass456</pre
+                >
+              </div>
+              <textarea class="form-control" id="multipleAccountsText" rows="10" placeholder="Her hesap bilgisini ayrı satırlarda girin. Email ve şifre zorunludur, token opsiyoneldir."></textarea>
+            </div>
+            <div id="parsedAccountsContainer" class="mb-3">
+              <h6>Ayrıştırılan Hesaplar: <span id="parsedAccountsCount" class="badge bg-primary rounded-pill shadow-sm" style="font-size: 0.7rem; padding: 0.25rem 0.5rem; vertical-align: middle; font-weight: 600; letter-spacing: 0.5px; border: 1px solid rgba(255, 255, 255, 0.2)">0</span></h6>
+              <div class="table-responsive">
+                <table class="table table-sm table-bordered" id="parsedAccountsTable">
+                  <thead>
+                    <tr>
+                      <th>Token</th>
+                      <th>Email</th>
+                      <th>Şifre</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-success" id="parseAccountsBtn">Ayrıştır</button>
+            <button type="button" class="btn btn-primary" id="saveMultipleAccountsBtn" disabled>Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hesap Düzenleme Modal -->
+    <div class="modal fade" id="editAccountModal" tabindex="-1" aria-labelledby="editAccountModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editAccountModalLabel">Hesap Düzenle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editAccountForm">
+              <input type="hidden" id="editAccountId" />
+              <div class="mb-3">
+                <label for="editAccountToken" class="form-label">Token:</label>
+                <input type="text" class="form-control" id="editAccountToken" required />
+              </div>
+              <div id="editWindsurfFields" style="display: none">
+                <div class="mb-3">
+                  <label for="editAccountApiKey" class="form-label">API Key:</label>
+                  <input type="text" class="form-control" id="editAccountApiKey" />
+                </div>
+                <div class="mb-3">
+                  <label for="editAccountRefreshToken" class="form-label">Refresh Token:</label>
+                  <input type="text" class="form-control" id="editAccountRefreshToken" />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="editAccountEmail" class="form-label">E-posta:</label>
+                <input type="email" class="form-control" id="editAccountEmail" required />
+              </div>
+              <div class="mb-3">
+                <label for="editAccountPassword" class="form-label">Şifre:</label>
+                <input type="text" class="form-control" id="editAccountPassword" required />
+              </div>
+              <div class="mb-3">
+                <label for="editAccountFeature" class="form-label">Özellik:</label>
+                <select class="form-select" id="editAccountFeature">
+                  <option value="">Yükleniyor...</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-danger me-auto" id="deleteAccountBtn">Sil</button>
+            <button type="button" class="btn btn-primary" id="updateAccountBtn">Güncelle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bildirim Ekleme Modal -->
+    <div class="modal fade" id="addNotificationModal" tabindex="-1" aria-labelledby="addNotificationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addNotificationModalLabel">Yeni Bildirim Ekle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addNotificationForm">
+              <div class="mb-3">
+                <label for="notificationMessageTr" class="form-label">Türkçe Mesaj:</label>
+                <textarea class="form-control" id="notificationMessageTr" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="notificationMessageEn" class="form-label">İngilizce Mesaj:</label>
+                <textarea class="form-control" id="notificationMessageEn" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="notificationMessageZh" class="form-label">Çince Mesaj (Opsiyonel):</label>
+                <textarea class="form-control" id="notificationMessageZh" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-primary" id="saveNotificationBtn">Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bildirim Düzenleme Modal -->
+    <div class="modal fade" id="editNotificationModal" tabindex="-1" aria-labelledby="editNotificationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editNotificationModalLabel">Bildirim Düzenle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editNotificationForm">
+              <input type="hidden" id="editNotificationId" />
+              <div class="mb-3">
+                <label for="editNotificationMessageTr" class="form-label">Türkçe Mesaj:</label>
+                <textarea class="form-control" id="editNotificationMessageTr" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="editNotificationMessageEn" class="form-label">İngilizce Mesaj:</label>
+                <textarea class="form-control" id="editNotificationMessageEn" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="editNotificationMessageZh" class="form-label">Çince Mesaj (Opsiyonel):</label>
+                <textarea class="form-control" id="editNotificationMessageZh" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-danger me-auto" id="deleteNotificationBtn">Sil</button>
+            <button type="button" class="btn btn-primary" id="updateNotificationBtn">Güncelle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Özellik Ekleme Modal -->
+    <div class="modal fade feature-modal" id="addFeatureModal" tabindex="-1" aria-labelledby="addFeatureModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addFeatureModalLabel">Yeni Özellik Ekle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addFeatureForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="featureName" class="form-label">Özellik Adı:</label>
+                  <input type="text" class="form-control" id="featureName" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="featureNameKey" class="form-label">Özellik Anahtar Adı:</label>
+                  <input type="text" class="form-control" id="featureNameKey" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="featureFileName" class="form-label">Dosya Adı:</label>
+                  <input type="text" class="form-control" id="featureFileName" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="featureCredit" class="form-label">Kredi Miktarı:</label>
+                  <input type="number" class="form-control" id="featureCredit" min="0" value="0" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="featurePool" checked />
+                    <label class="form-check-label" for="featurePool">Havuz Kullan</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="featureIsActive" checked />
+                    <label class="form-check-label" for="featureIsActive">Aktif</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">İpucu Metinleri:</label>
+                <div class="row">
+                  <div class="col-md-4 mb-2">
+                    <input type="text" class="form-control" id="featureHintTr" placeholder="Türkçe İpucu" required />
+                  </div>
+                  <div class="col-md-4 mb-2">
+                    <input type="text" class="form-control" id="featureHintEn" placeholder="İngilizce İpucu" required />
+                  </div>
+                  <div class="col-md-4 mb-2">
+                    <input type="text" class="form-control" id="featureHintZh" placeholder="Çince İpucu" />
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="featureArgs" class="form-label">Argümanlar (virgülle ayırın):</label>
+                <input type="text" class="form-control" id="featureArgs" />
+              </div>
+
+              <!-- Addon Bölümü -->
+              <hr />
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="hasAddon" />
+                  <label class="form-check-label" for="hasAddon">Eklenti (Addon) Ekle</label>
+                </div>
+              </div>
+
+              <div id="addonSection" style="display: none">
+                <h5 class="mb-3">Eklenti Bilgileri</h5>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="addonName" class="form-label">Eklenti Adı:</label>
+                    <input type="text" class="form-control" id="addonName" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="addonNameKey" class="form-label">Eklenti Anahtar Adı:</label>
+                    <input type="text" class="form-control" id="addonNameKey" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="addonFileName" class="form-label">Dosya Adı:</label>
+                    <input type="text" class="form-control" id="addonFileName" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="addonCredit" class="form-label">Kredi Miktarı:</label>
+                    <input type="number" class="form-control" id="addonCredit" min="0" value="0" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="addonIsActive" />
+                      <label class="form-check-label" for="addonIsActive">Aktif</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">İpucu Metinleri:</label>
+                  <div class="row">
+                    <div class="col-md-4 mb-2">
+                      <input type="text" class="form-control" id="addonHintTr" placeholder="Türkçe İpucu" />
+                    </div>
+                    <div class="col-md-4 mb-2">
+                      <input type="text" class="form-control" id="addonHintEn" placeholder="İngilizce İpucu" />
+                    </div>
+                    <div class="col-md-4 mb-2">
+                      <input type="text" class="form-control" id="addonHintZh" placeholder="Çince İpucu" />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="addonArgs" class="form-label">Argümanlar (virgülle ayırın):</label>
+                  <input type="text" class="form-control" id="addonArgs" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-primary" id="saveFeatureBtn">Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Özellik Düzenleme Modal -->
+    <div class="modal fade feature-modal" id="editFeatureModal" tabindex="-1" aria-labelledby="editFeatureModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editFeatureModalLabel">Özellik Düzenle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editFeatureForm">
+              <input type="hidden" id="editFeatureIndex" />
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="editFeatureName" class="form-label">Özellik Adı:</label>
+                  <input type="text" class="form-control" id="editFeatureName" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editFeatureNameKey" class="form-label">Özellik Anahtar Adı:</label>
+                  <input type="text" class="form-control" id="editFeatureNameKey" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="editFeatureFileName" class="form-label">Dosya Adı:</label>
+                  <input type="text" class="form-control" id="editFeatureFileName" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editFeatureCredit" class="form-label">Kredi Miktarı:</label>
+                  <input type="number" class="form-control" id="editFeatureCredit" min="0" value="0" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="editFeaturePool" />
+                    <label class="form-check-label" for="editFeaturePool">Havuz Kullan</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="editFeatureIsActive" />
+                    <label class="form-check-label" for="editFeatureIsActive">Aktif</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">İpucu Metinleri:</label>
+                <div class="row">
+                  <div class="col-md-4 mb-2">
+                    <input type="text" class="form-control" id="editFeatureHintTr" placeholder="Türkçe İpucu" required />
+                  </div>
+                  <div class="col-md-4 mb-2">
+                    <input type="text" class="form-control" id="editFeatureHintEn" placeholder="İngilizce İpucu" required />
+                  </div>
+                  <div class="col-md-4 mb-2">
+                    <input type="text" class="form-control" id="editFeatureHintZh" placeholder="Çince İpucu" />
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="editFeatureArgs" class="form-label">Argümanlar (virgülle ayırın):</label>
+                <input type="text" class="form-control" id="editFeatureArgs" />
+              </div>
+
+              <!-- Addon Bölümü -->
+              <hr />
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="editHasAddon" />
+                  <label class="form-check-label" for="editHasAddon">Eklenti (Addon) Ekle</label>
+                </div>
+              </div>
+
+              <div id="editAddonSection" style="display: none">
+                <h5 class="mb-3">Eklenti Bilgileri</h5>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="editAddonName" class="form-label">Eklenti Adı:</label>
+                    <input type="text" class="form-control" id="editAddonName" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="editAddonNameKey" class="form-label">Eklenti Anahtar Adı:</label>
+                    <input type="text" class="form-control" id="editAddonNameKey" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="editAddonFileName" class="form-label">Dosya Adı:</label>
+                    <input type="text" class="form-control" id="editAddonFileName" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="editAddonCredit" class="form-label">Kredi Miktarı:</label>
+                    <input type="number" class="form-control" id="editAddonCredit" min="0" value="0" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="editAddonIsActive" />
+                      <label class="form-check-label" for="editAddonIsActive">Aktif</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">İpucu Metinleri:</label>
+                  <div class="row">
+                    <div class="col-md-4 mb-2">
+                      <input type="text" class="form-control" id="editAddonHintTr" placeholder="Türkçe İpucu" />
+                    </div>
+                    <div class="col-md-4 mb-2">
+                      <input type="text" class="form-control" id="editAddonHintEn" placeholder="İngilizce İpucu" />
+                    </div>
+                    <div class="col-md-4 mb-2">
+                      <input type="text" class="form-control" id="editAddonHintZh" placeholder="Çince İpucu" />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="editAddonArgs" class="form-label">Argümanlar (virgülle ayırın):</label>
+                  <input type="text" class="form-control" id="editAddonArgs" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-primary" id="updateFeatureBtn">Güncelle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sosyal Medya Ekleme Modal -->
+    <div class="modal fade" id="addSocialModal" tabindex="-1" aria-labelledby="addSocialModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addSocialModalLabel">Sosyal Medya Ekle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addSocialForm">
+              <div class="mb-3">
+                <label for="socialName" class="form-label">İsim:</label>
+                <input type="text" class="form-control" id="socialName" required />
+              </div>
+              <div class="mb-3">
+                <label for="socialUrl" class="form-label">URL:</label>
+                <input type="text" class="form-control" id="socialUrl" required />
+              </div>
+              <div class="mb-3">
+                <label for="socialImage" class="form-label">Resim URL:</label>
+                <input type="text" class="form-control" id="socialImage" required />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-primary" id="saveSocialBtn">Ekle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Cookie'den token'ı al ve localStorage'a kaydet
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+        return null;
+      }
+
+      // Admin token'ını cookie'den al ve localStorage'a kaydet
+      const adminToken = getCookie("adminToken");
+      if (adminToken) {
+        localStorage.setItem("adminToken", adminToken);
+        console.log("Admin token localStorage'a kaydedildi.");
+      }
+
+      // Sayfa yüklendiğinde çalışacak kod
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sayfa yüklendiğinde oturum kontrolü yapılacak
+        console.log("Dashboard sayfası yüklendi, oturum kontrolü yapılıyor...");
+
+        // Her domainden bir hesap seçme fonksiyonu
+        document.getElementById("selectDomainAccountsBtn").addEventListener("click", function () {
+          // Tablo yapısını kontrol et
+          const table = document.getElementById("poolAccountsTable");
+          if (!table) {
+            console.error("Tablo bulunamadı: poolAccountsTable");
+            alert("Tablo bulunamadı!");
+            return;
+          }
+
+          // Hesapları oku
+          // Tablo yapısı: Email ikinci sütunda, Token bilgisi "data-token" attribute'unda
+          const rows = Array.from(table.rows).filter((row) => {
+            // İlk satır header olabilir veya "Hesap bulunamadı" gibi mesaj içerebilir
+            // En az 2 hücresi olan ve checkbox içeren satırları seçelim (gerçek hesap satırları)
+            return row.cells.length >= 2 && row.querySelector(".account-checkbox");
+          });
+
+          console.log("Toplam hesap satırı:", rows.length);
+
+          if (rows.length === 0) {
+            alert("Hesap bulunamadı! Lütfen önce hesapları göster butonuna tıklayın.");
+            return;
+          }
+
+          // Sadece "cursor_auth" özelliğine sahip hesapları filtrele
+          const cursorAuthAccounts = [];
+
+          rows.forEach((row) => {
+            try {
+              // Email hücresi (1. index, ikinci kolon)
+              const emailCell = row.cells[1];
+              if (!emailCell) {
+                console.log("Email hücresi bulunamadı");
+                return;
+              }
+              const email = emailCell.textContent.trim();
+
+              // Token değeri "edit-account" butonunun data-token attribute'undan alınır
+              const editButton = row.querySelector(".edit-account");
+              if (!editButton) {
+                console.log("Düzenle butonu bulunamadı");
+                return;
+              }
+              const token = editButton.getAttribute("data-token");
+              const featureKey = editButton.getAttribute("data-feature-key");
+
+              if (!email || !token) {
+                console.log("Email veya token bulunamadı:", email, token);
+                return;
+              }
+
+              // Sadece "cursor_auth" özelliğine sahip hesapları ekle
+              if (featureKey === "cursor_auth") {
+                cursorAuthAccounts.push({ email, token, featureKey });
+              }
+            } catch (error) {
+              console.error("Hesap işleme hatası:", error);
+            }
+          });
+
+          console.log("Toplam cursor_auth hesabı:", cursorAuthAccounts.length);
+
+          if (cursorAuthAccounts.length === 0) {
+            alert("Hiçbir cursor_auth hesabı bulunamadı!");
+            return;
+          }
+
+          // Domainlere göre hesapları grupla
+          const domainAccounts = {};
+
+          cursorAuthAccounts.forEach((account) => {
+            const domainParts = account.email.split("@");
+            if (domainParts.length < 2) {
+              console.log("Geçersiz email formatı:", account.email);
+              return;
+            }
+
+            const domain = domainParts[1];
+
+            // Her domain için sadece bir hesap ekle
+            if (!domainAccounts[domain]) {
+              domainAccounts[domain] = account;
+              console.log(`Domain '${domain}' için cursor_auth hesabı eklendi:`, account.email);
+            }
+          });
+
+          const domainCount = Object.keys(domainAccounts).length;
+          console.log(`Toplam ${domainCount} farklı domain için cursor_auth hesabı bulundu.`);
+
+          if (domainCount === 0) {
+            alert("Hiçbir domain için cursor_auth hesabı bulunamadı!");
+            return;
+          }
+
+          // Her domainden bir hesap seç ve JSON oluştur
+          const selectedAccounts = Object.values(domainAccounts).map((acc) => {
+            let processedToken = acc.token;
+
+            // Token içinde "%3A%3A" varsa sağ tarafı al
+            if (processedToken && processedToken.includes("%3A%3A")) {
+              processedToken = processedToken.split("%3A%3A")[1];
+              console.log("Token işlendi:", processedToken.substring(0, 15) + "...");
+            }
+
+            return {
+              email: acc.email,
+              token: processedToken,
+            };
+          });
+
+          // JSON olarak kopyalamak için
+          const jsonStr = JSON.stringify(selectedAccounts, null, 2);
+          console.log("JSON oluşturuldu, toplam eleman:", selectedAccounts.length);
+
+          // Clipboard API kullanarak kopyala
+          navigator.clipboard
+            .writeText(jsonStr)
+            .then(() => {
+              // Başarılı kopyalama bildirimi
+              const toast = document.createElement("div");
+              toast.className = "position-fixed bottom-0 end-0 p-3";
+              toast.style.zIndex = "5";
+              toast.innerHTML = `
+              <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                  <strong class="me-auto"><i class="bi bi-clipboard-check"></i> Başarılı!</strong>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Kapat"></button>
+                </div>
+                <div class="toast-body">
+                  <p>${domainCount} farklı domainden hesap JSON olarak kopyalandı.</p>
+                </div>
+              </div>
+            `;
+              document.body.appendChild(toast);
+
+              // 3 saniye sonra toast'ı kaldır
+              setTimeout(() => {
+                document.body.removeChild(toast);
+              }, 3000);
+            })
+            .catch((err) => {
+              console.error("Kopyalama başarısız:", err);
+              alert("Kopyalama işlemi başarısız oldu!");
+            });
+        });
+
+        // Windsurf hesapları için JSON oluşturma ve kopyalama (Tablodan okuma)
+        document.getElementById("selectWindsurfAccountsBtn").addEventListener("click", function () {
+          console.log("Windsurf JSON butonu tıklandı (tablodan okuma).");
+          const table = document.getElementById("poolAccountsTable");
+          if (!table) {
+            console.error("Tablo bulunamadı: poolAccountsTable");
+            alert("Havuz hesapları tablosu bulunamadı!");
+            return;
+          }
+
+          const rows = Array.from(table.rows).filter((row) => {
+            return row.cells.length >= 2 && row.querySelector(".edit-account"); // Düzenle butonu olan satırları al
+          });
+
+          console.log("Toplam okunabilir hesap satırı:", rows.length);
+
+          if (rows.length === 0) {
+            alert("Tabloda okunacak hesap bulunamadı! Önce hesapları gösterin.");
+            return;
+          }
+
+          const uniqueWindsurfAccounts = [];
+          const addedDomains = new Set(); // Alan adlarını takip etmek için Set
+
+          rows.forEach((row) => {
+            try {
+              const editButton = row.querySelector(".edit-account");
+              if (!editButton) return; // Edit butonu yoksa atla
+
+              const featureKey = editButton.getAttribute("data-feature-key");
+
+              // Sadece 'windsurf' özelliğine sahip hesapları al
+              if (featureKey === "windsurf_auth") {
+                // *** Bu featureKey değerini kendi sisteminize göre güncelleyin! ***
+                const emailCell = row.cells[1]; // Email ikinci sütunda varsayılıyor
+                const email = emailCell ? emailCell.textContent.trim() : null;
+                const apiKey = editButton.getAttribute("data-api-key");
+                const refreshToken = editButton.getAttribute("data-refresh-token");
+
+                if (email && apiKey && refreshToken) {
+                  const domain = email.substring(email.lastIndexOf("@") + 1); // E-postadan domaini al
+
+                  // Eğer bu domain daha önce eklenmediyse hesabı ekle
+                  if (!addedDomains.has(domain)) {
+                    uniqueWindsurfAccounts.push({
+                      email: email,
+                      api_key: apiKey,
+                      refresh_token: refreshToken,
+                    });
+                    addedDomains.add(domain); // Domaini eklendi olarak işaretle
+                    console.log(`Domain eklendi: ${domain}, Hesap: ${email}`);
+                  } else {
+                    console.log(`Domain zaten var: ${domain}, Hesap atlandı: ${email}`);
+                  }
+                } else {
+                  console.warn("Eksik bilgi (email, api_key veya refresh_token), satır atlandı:", row);
+                }
+              }
+            } catch (error) {
+              console.error("Windsurf hesap işleme hatası:", error, row);
+            }
+          });
+
+          console.log(`Toplam benzersiz domainli windsurf hesabı bulundu: ${uniqueWindsurfAccounts.length}`);
+
+          if (uniqueWindsurfAccounts.length === 0) {
+            alert("Tabloda 'windsurf' özelliğine sahip ve işlenebilecek benzersiz domainli hesap bulunamadı.");
+            return;
+          }
+
+          const jsonStr = JSON.stringify(uniqueWindsurfAccounts, null, 2);
+
+          navigator.clipboard
+            .writeText(jsonStr)
+            .then(() => {
+              console.log("[Windsurf Toast] .then() bloğu başladı.");
+              // Başarılı kopyalama bildirimi
+              const toast = document.createElement("div");
+              toast.className = "position-fixed bottom-0 end-0 p-3";
+              toast.style.zIndex = "5";
+              toast.innerHTML = `
+              <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                  <strong class="me-auto"><i class="bi bi-clipboard-check"></i> Başarılı!</strong>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Kapat"></button>
+                </div>
+                <div class="toast-body">
+                  <p>${uniqueWindsurfAccounts.length} farklı domainden Windsurf hesabı JSON olarak kopyalandı.</p>
+                </div>
+              </div>
+            `;
+              console.log("[Windsurf Toast] Toast elementi oluşturuldu:", toast);
+              document.body.appendChild(toast);
+              console.log("[Windsurf Toast] Toast elementi body'ye eklendi.");
+
+              // 3 saniye sonra toast'ı kaldır
+              console.log("[Windsurf Toast] setTimeout ayarlanıyor.");
+              setTimeout(() => {
+                console.log("[Windsurf Toast] setTimeout çalıştı, toast kaldırılıyor.");
+                if (document.body.contains(toast)) {
+                  // Güvenlik kontrolü: Element hala varsa kaldır
+                  document.body.removeChild(toast);
+                  console.log("[Windsurf Toast] Toast kaldırıldı.");
+                } else {
+                  console.log("[Windsurf Toast] Toast zaten kaldırılmış veya bulunamadı.");
+                }
+              }, 3000);
+            })
+            .catch((err) => {
+              console.error("Kopyalama başarısız:", err);
+              alert("Kopyalama işlemi başarısız oldu!");
+            });
+        });
+
+        // Basit bir toast mesajı gösterme fonksiyonu (gerekirse daha gelişmiş bir kütüphane kullan)
+        function showToast(message, type = "info") {
+          const toast = document.createElement("div");
+          toast.textContent = message;
+          toast.className = `toast-notification ${type}`;
+          document.body.appendChild(toast);
+          setTimeout(() => {
+            toast.remove();
+          }, 3000);
+        }
+      });
+    </script>
+    <script src="/js/admin-dashboard.js"></script>
+  </body>
+</html>

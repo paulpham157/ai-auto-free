@@ -1,0 +1,454 @@
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #343a40;
+    color: white;
+    min-height: 100vh;
+    padding-top: 20px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+}
+
+.sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.search-result {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.account-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.account-item {
+    border-left: 4px solid #0d6efd;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+}
+
+.account-item:hover {
+    transform: translateX(5px);
+}
+
+.account-item.active-account {
+    border-left-color: #198754;
+}
+
+/* Mobil uyumluluk için eklenen stiller */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1050;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        z-index: 1040;
+        height: 100%;
+        overflow-y: auto;
+        padding-top: 60px;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .main-content {
+        padding-top: 60px;
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+
+/* Mobil görünümde form elemanları için iyileştirmeler */
+@media (max-width: 767.98px) {
+
+    .form-control,
+    .btn {
+        font-size: 16px;
+        /* iOS'ta yakınlaştırmayı önlemek için */
+        margin-bottom: 10px;
+    }
+
+    .card-body {
+        padding: 15px 10px;
+    }
+
+    .account-item {
+        padding: 10px !important;
+    }
+}
+
+/* Overlay */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1030;
+}
+
+/* Servis Ayarları için ek stiller */
+.features-accordion .accordion-item {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.features-accordion .accordion-button {
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.features-accordion .accordion-button:not(.collapsed) {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    box-shadow: none;
+}
+
+.features-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+.features-accordion .accordion-body {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hint-tabs .nav-tabs {
+    border-bottom: none;
+}
+
+.hint-tabs .nav-link {
+    padding: 5px 15px;
+    border-radius: 5px 5px 0 0;
+    font-size: 0.9rem;
+}
+
+.hint-tabs .tab-content {
+    display: block;
+    min-height: 60px;
+    background-color: #fff;
+}
+
+#featureSearchInput {
+    border-radius: 20px;
+    padding-left: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236c757d' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+
+.card.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    transition: all 0.3s;
+}
+
+.card.shadow-sm:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card .card-header {
+    border-radius: 10px 10px 0 0;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+}
+
+/* Token görüntüleme stilleri */
+.token-cell {
+    max-width: 200px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: max-width 0.5s ease, background-color 0.3s ease;
+}
+
+.token-cell:hover {
+    max-width: 300px;
+    white-space: normal;
+    word-break: break-all;
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.token-cell button {
+    margin-left: 8px;
+    vertical-align: top;
+}
+
+/* Özellik simgeleri için stil */
+.feature-icon {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Aktif hesaplar tablosu için ek stiller */
+#active-accounts .table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+#active-accounts .table th,
+#active-accounts .table td {
+    vertical-align: middle;
+    padding: 10px;
+}
+
+#active-accounts .table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+#active-accounts .table td {
+    font-size: 0.9rem;
+}
+
+#active-accounts .user-id-cell {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#active-accounts .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+#active-accounts .copy-token,
+#active-accounts .copy-password {
+    white-space: nowrap;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 767.98px) {
+    .token-cell {
+        max-width: 100px;
+    }
+
+    .token-cell:hover {
+        max-width: none;
+    }
+}
+
+/* Admin Paneli Başlık Stili */
+.admin-panel-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    to {
+        text-shadow: 0 0 10px rgba(13, 110, 253, 0.7), 0 0 20px rgba(13, 110, 253, 0.5);
+    }
+}
+
+.admin-panel-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar için ek stil özellikleri */
+.sidebar {
+    background-color: #343a40;
+    color: white;
+    min-height: 100vh;
+    padding-top: 20px;
+    transition: all 0.3s;
+}
+
+/* Hover scale efekti */
+.hover-scale {
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Kullanıcı bilgileri popup stilleri */
+.user-info-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+.popup-header h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.close-popup {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.close-popup:hover {
+    color: #dc3545;
+}
+
+.popup-body {
+    padding: 20px;
+}
+
+.popup-body table {
+    margin-bottom: 0;
+}
+
+.popup-body th {
+    width: 40%;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar istatistik öğesi için stil */
+.nav-stats-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+    border-left: 3px solid transparent;
+}
+
+.nav-stats-item:hover {
+    background-color: #2c3136 !important;
+    transform: translateX(3px);
+    opacity: 1;
+    border-left-color: #0d6efd;
+}
+
+.nav-stats-item .badge {
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.nav-stats-item:hover .badge {
+    transform: scale(1.1);
+}
+
+#dailyLoginCount {
+    min-width: 2rem;
+    text-align: center;
+}

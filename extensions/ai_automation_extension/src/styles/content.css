@@ -1,0 +1,140 @@
+/* Sağdaki floating panel stili */
+.automation-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #242424;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    overflow: hidden;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #e0e0e0;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.automation-panel.collapsed {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+    cursor: move;
+}
+
+.panel-title {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.panel-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.panel-button {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.panel-button:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.panel-content {
+    padding: 10px 12px;
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+.log-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.log-entry {
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 5px 0;
+    border-bottom: 1px solid #333;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-entry.info {
+    color: #9ca3af;
+}
+
+.log-entry.success {
+    color: #6ee7b7;
+}
+
+.log-entry.error {
+    color: #f87171;
+}
+
+.log-entry.warning {
+    color: #fcd34d;
+}
+
+/* Input field stili (otomatik doldurma için highlight) */
+.highlighted-input {
+    border: 2px solid #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Collapse/expand butonu */
+.collapse-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #242424;
+    border-radius: 50%;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9998;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.collapse-button:hover {
+    background-color: #333;
+}
+
+.collapse-button i {
+    color: #e0e0e0;
+    font-size: 18px;
+}

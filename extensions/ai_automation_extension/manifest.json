@@ -1,0 +1,59 @@
+{
+    "manifest_version": 3,
+    "name": "Cursor & Codeium Hesap Otomasyon Aracı",
+    "version": "1.0.0",
+    "description": "Cursor ve Codeium web sitelerinde hesap oluşturmayı otomatikleştiren bir eklenti",
+    "icons": {
+        "16": "src/assets/icon16.png",
+        "48": "src/assets/icon48.png",
+        "128": "src/assets/icon128.png"
+    },
+    "action": {
+        "default_title": "Cursor & Codeium Hesap Otomasyon Aracı"
+    },
+    "permissions": [
+        "storage",
+        "tabs",
+        "cookies",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "https://codeium.com/*",
+        "https://windsurf.com/*",
+        "https://authenticator.cursor.sh/*",
+        "https://www.cursor.com/*",
+        "https://api2.cursor.sh/*"
+    ],
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://codeium.com/*",
+                "https://windsurf.com/*",
+                "https://authenticator.cursor.sh/*",
+                "https://www.cursor.com/*"
+            ],
+            "js": [
+                "src/utils/helpers.js",
+                "src/services/database.js",
+                "src/services/formFiller.js",
+                "src/content.js"
+            ],
+            "css": [
+                "src/styles/content.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "dashboard.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

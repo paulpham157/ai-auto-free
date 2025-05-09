@@ -27,8 +27,14 @@ This tool has been developed for research and educational purposes only. Please 
 
 ## Screenshots
 
+### Web
 ![Res1](screenshots/en-1.png)
 ![Res2](screenshots/en-2.png)
+
+### Desktop
+![Res3](screenshots/r1.png)
+![Res4](screenshots/r2.png)
+![GIF1](screenshots/en.gif)
 
 ### Common Issues
 

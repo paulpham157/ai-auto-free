@@ -1,0 +1,1 @@
+Open this project with Windsurf 1.0.0
